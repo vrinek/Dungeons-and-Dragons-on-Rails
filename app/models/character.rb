@@ -14,4 +14,11 @@ class Character
   key :wisdom, Integer
   key :charisma, Integer
 
+  def initiative
+    dexterity.modifier + level_bonus
+  end
+
+  def level_bonus
+    level / 2
+  end
 end
