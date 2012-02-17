@@ -4,15 +4,14 @@ class Character
   key :name, String
   key :level, Integer
 
-  key :character_class_code, String
   key :character_race_code, String
 
-  key :strength, Integer
-  key :constitution, Integer
-  key :dexterity, Integer
-  key :intelligence, Integer
-  key :wisdom, Integer
-  key :charisma, Integer
+  key :strength, AbilityScore
+  key :constitution, AbilityScore
+  key :dexterity, AbilityScore
+  key :intelligence, AbilityScore
+  key :wisdom, AbilityScore
+  key :charisma, AbilityScore
 
   def initiative
     dexterity.modifier + level_bonus
