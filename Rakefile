@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Dnd1::Application.load_tasks
+DnDoR::Application.load_tasks
