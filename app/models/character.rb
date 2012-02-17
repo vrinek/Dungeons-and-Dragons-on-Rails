@@ -20,6 +20,6 @@ class Character
   end
 
   def level_bonus
-    level / 2
+    level.to_i / 2
   end
 end

@@ -1,6 +1,6 @@
 class AbilityScore
   def initialize(value)
-    @value = value
+    @value = value.to_i
   end
 
   def modifier
