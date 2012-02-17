@@ -3,6 +3,8 @@ class Character
 
   key :name, String
   key :level, Integer
+  key :alignment, String
+  ALIGNMENTS = ["Lawful Good", "Good", "Neutral", "Evil", "Chaotic Evil"]
 
   key :character_race_code, String
 

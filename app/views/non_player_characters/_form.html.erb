@@ -21,6 +21,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :alignment %><br />
+    <%= f.select :alignment, options_for_select(Character::ALIGNMENTS) %>
+  </div>
+
+  <div class="field">
     <%= f.label :character_race_code %><br />
     <%= f.text_field :character_race_code %>
   </div>
