@@ -3,4 +3,4 @@ MongoMapper.config = {
 }
 
 MongoMapper.connect(Rails.env)
-
+MongoMapper::Document.plugin(MongoMapper::Plugins::IdentityMap)
