@@ -1,5 +1,7 @@
 Dnd1::Application.routes.draw do
   resources :characters
+  resources :non_player_characters
+  resources :player_characters
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -2,38 +2,41 @@
 
 <table>
   <tr>
+    <th>Type</th>
     <th>Name</th>
     <th>Level</th>
+    <th>Character race code</th>
     <th>Strength</th>
     <th>Constitution</th>
     <th>Dexterity</th>
     <th>Intelligence</th>
     <th>Wisdom</th>
     <th>Charisma</th>
-    <th>Character class code</th>
-    <th>Character race code</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
-<% @characters.each do |character| %>
-  <tr>
-    <td><%= character.name %></td>
-    <td><%= character.level %></td>
-    <td><%= character.strength %></td>
-    <td><%= character.constitution %></td>
-    <td><%= character.dexterity %></td>
-    <td><%= character.intelligence %></td>
-    <td><%= character.wisdom %></td>
-    <td><%= character.charisma %></td>
-    <td><%= character.character_class_code %></td>
-    <td><%= character.character_race_code %></td>
-    <td><%= link_to 'Show', character %></td>
-    <td><%= link_to 'Edit', edit_character_path(character) %></td>
-    <td><%= link_to 'Destroy', character, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+  <% @characters.each do |character| %>
+    <tr>
+      <td><%= character.class %></td>
+      <td><%= character.name %></td>
+      <td><%= character.character_race_code %></td>
+      <td><%= character.level %></td>
+
+      <td><%= character.strength %></td>
+      <td><%= character.constitution %></td>
+      <td><%= character.dexterity %></td>
+      <td><%= character.intelligence %></td>
+      <td><%= character.wisdom %></td>
+      <td><%= character.charisma %></td>
+
+      <td>
+        <%= link_to 'Show', character %>
+        <%= link_to 'Edit', edit_non_player_character_path(character) %>
+        <%= link_to 'Destroy', character, confirm: 'Are you sure?',
+              method: :delete %>
+      </td>
+    </tr>
+  <% end %>
 </table>
 
 <br />

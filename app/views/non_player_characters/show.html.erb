@@ -1,0 +1,83 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="npc-card">
+  <div class="header">
+    <span class="name"><%= @non_player_character.name %></span>
+    <span class="level-and-role">
+      Level
+      <%= @non_player_character.level %>
+      <%= @non_player_character.character_role_code %>
+    </span>
+  </div>
+
+  <div class="combat-stats">
+    <b>Initiative</b> <%= "%+d" % @non_player_character.initiative %>
+  </div>
+</div>
+
+<p>
+  <b>Name:</b>
+  <%= @non_player_character.name %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @non_player_character.level %>
+  <%= "%+d" % @non_player_character.level_bonus %>
+</p>
+
+<p>
+  <b>Character race code:</b>
+  <%= @non_player_character.character_race_code %>
+</p>
+
+<p>
+  <b>Character role code:</b>
+  <%= @non_player_character.character_role_code %>
+</p>
+
+<p>
+  <b>Initiative:</b>
+  <%= "%+d" % @non_player_character.initiative %>
+</p>
+
+<p>
+  <b>Strength:</b>
+  <%= @non_player_character.strength %>
+  <%= "%+d" % @non_player_character.strength.modifier %>
+</p>
+
+<p>
+  <b>Constitution:</b>
+  <%= @non_player_character.constitution %>
+  <%= "%+d" % @non_player_character.constitution.modifier %>
+</p>
+
+<p>
+  <b>Dexterity:</b>
+  <%= @non_player_character.dexterity %>
+  <%= "%+d" % @non_player_character.dexterity.modifier %>
+</p>
+
+<p>
+  <b>Intelligence:</b>
+  <%= @non_player_character.intelligence %>
+  <%= "%+d" % @non_player_character.intelligence.modifier %>
+</p>
+
+<p>
+  <b>Wisdom:</b>
+  <%= @non_player_character.wisdom %>
+  <%= "%+d" % @non_player_character.wisdom.modifier %>
+</p>
+
+<p>
+  <b>Charisma:</b>
+  <%= @non_player_character.charisma %>
+  <%= "%+d" % @non_player_character.charisma.modifier %>
+</p>
+
+
+<%= link_to 'Edit', edit_non_player_character_path(@non_player_character) %> |
+<%= link_to 'Back', non_player_characters_path %>

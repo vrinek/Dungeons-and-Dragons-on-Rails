@@ -1,10 +1,10 @@
-<%= form_for(@character) do |f| %>
-  <% if @character.errors.any? %>
+<%= form_for(@non_player_character) do |f| %>
+  <% if @non_player_character.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@character.errors.count, "error") %> prohibited this character from being saved:</h2>
+      <h2><%= pluralize(@non_player_character.errors.count, "error") %> prohibited this character from being saved:</h2>
 
       <ul>
-      <% @character.errors.full_messages.each do |msg| %>
+      <% @non_player_character.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -23,6 +23,10 @@
   <div class="field">
     <%= f.label :character_race_code %><br />
     <%= f.text_field :character_race_code %>
+  </div>
+  <div class="field">
+    <%= f.label :character_role_code %><br />
+    <%= f.text_field :character_role_code %>
   </div>
 
   <div class="field">

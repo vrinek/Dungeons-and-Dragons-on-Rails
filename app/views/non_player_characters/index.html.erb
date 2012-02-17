@@ -1,0 +1,21 @@
+<h1>Listing non_player_characters</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @non_player_characters.each do |non_player_character| %>
+  <tr>
+    <td><%= link_to 'Show', non_player_character %></td>
+    <td><%= link_to 'Edit', edit_non_player_character_path(non_player_character) %></td>
+    <td><%= link_to 'Destroy', non_player_character, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Non player character', new_non_player_character_path %>
