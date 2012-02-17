@@ -1,3 +1,45 @@
 // Place all the styles related to the Characters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table.npc-card {
+  width: 500px;
+  border: 2px solid silver;
+  border-collapse: collapse;
+
+  th, td {
+    padding: 2px 10px;
+    text-align: left;
+    font-weight: normal;
+  }
+
+  thead {
+    color: white;
+    background-color: #445727;
+
+    tr:first-child th {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    th {
+      font-size: 16px;
+    }
+
+    .level-and-role, .xp-value {
+      float: right;
+    }
+  }
+
+  tbody td {
+    font-size: 14px;
+  }
+
+  tbody.combat-stats {
+    background-color: #e9e8d2;
+  }
+
+  tbody.more-stats {
+    background-color: #cccaad;
+  }
+}
