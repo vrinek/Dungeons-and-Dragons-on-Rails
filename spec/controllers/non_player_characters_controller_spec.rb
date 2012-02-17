@@ -26,20 +26,12 @@ describe NonPlayerCharactersController do
   def valid_attributes
     {}
   end
-  
+
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # NonPlayerCharactersController. Be sure to keep this updated too.
   def valid_session
     {}
-  end
-
-  describe "GET index" do
-    it "assigns all non_player_characters as @non_player_characters" do
-      non_player_character = NonPlayerCharacter.create! valid_attributes
-      get :index, {}, valid_session
-      assigns(:non_player_characters).should eq([non_player_character])
-    end
   end
 
   describe "GET show" do
@@ -143,21 +135,6 @@ describe NonPlayerCharactersController do
         put :update, {:id => non_player_character.to_param, :non_player_character => {}}, valid_session
         response.should render_template("edit")
       end
-    end
-  end
-
-  describe "DELETE destroy" do
-    it "destroys the requested non_player_character" do
-      non_player_character = NonPlayerCharacter.create! valid_attributes
-      expect {
-        delete :destroy, {:id => non_player_character.to_param}, valid_session
-      }.to change(NonPlayerCharacter, :count).by(-1)
-    end
-
-    it "redirects to the non_player_characters list" do
-      non_player_character = NonPlayerCharacter.create! valid_attributes
-      delete :destroy, {:id => non_player_character.to_param}, valid_session
-      response.should redirect_to(non_player_characters_url)
     end
   end
 

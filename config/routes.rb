@@ -1,7 +1,6 @@
 DnDoR::Application.routes.draw do
-  resources :characters
-  resources :non_player_characters
-  resources :player_characters
+  resources :characters, :only => [:index, :destroy]
+  resources :non_player_characters, :except => [:index, :destroy]
 
   root to: 'characters#index'
 end

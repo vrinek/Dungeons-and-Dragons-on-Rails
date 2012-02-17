@@ -26,7 +26,7 @@ describe CharactersController do
   def valid_attributes
     {}
   end
-  
+
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # CharactersController. Be sure to keep this updated too.
@@ -39,110 +39,6 @@ describe CharactersController do
       character = Character.create! valid_attributes
       get :index, {}, valid_session
       assigns(:characters).should eq([character])
-    end
-  end
-
-  describe "GET show" do
-    it "assigns the requested character as @character" do
-      character = Character.create! valid_attributes
-      get :show, {:id => character.to_param}, valid_session
-      assigns(:character).should eq(character)
-    end
-  end
-
-  describe "GET new" do
-    it "assigns a new character as @character" do
-      get :new, {}, valid_session
-      assigns(:character).should be_a_new(Character)
-    end
-  end
-
-  describe "GET edit" do
-    it "assigns the requested character as @character" do
-      character = Character.create! valid_attributes
-      get :edit, {:id => character.to_param}, valid_session
-      assigns(:character).should eq(character)
-    end
-  end
-
-  describe "POST create" do
-    describe "with valid params" do
-      it "creates a new Character" do
-        expect {
-          post :create, {:character => valid_attributes}, valid_session
-        }.to change(Character, :count).by(1)
-      end
-
-      it "assigns a newly created character as @character" do
-        post :create, {:character => valid_attributes}, valid_session
-        assigns(:character).should be_a(Character)
-        assigns(:character).should be_persisted
-      end
-
-      it "redirects to the created character" do
-        post :create, {:character => valid_attributes}, valid_session
-        response.should redirect_to(Character.last)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved character as @character" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Character.any_instance.stub(:save).and_return(false)
-        post :create, {:character => {}}, valid_session
-        assigns(:character).should be_a_new(Character)
-      end
-
-      it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Character.any_instance.stub(:save).and_return(false)
-        post :create, {:character => {}}, valid_session
-        response.should render_template("new")
-      end
-    end
-  end
-
-  describe "PUT update" do
-    describe "with valid params" do
-      it "updates the requested character" do
-        character = Character.create! valid_attributes
-        # Assuming there are no other characters in the database, this
-        # specifies that the Character created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        Character.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, {:id => character.to_param, :character => {'these' => 'params'}}, valid_session
-      end
-
-      it "assigns the requested character as @character" do
-        character = Character.create! valid_attributes
-        put :update, {:id => character.to_param, :character => valid_attributes}, valid_session
-        assigns(:character).should eq(character)
-      end
-
-      it "redirects to the character" do
-        character = Character.create! valid_attributes
-        put :update, {:id => character.to_param, :character => valid_attributes}, valid_session
-        response.should redirect_to(character)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns the character as @character" do
-        character = Character.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Character.any_instance.stub(:save).and_return(false)
-        put :update, {:id => character.to_param, :character => {}}, valid_session
-        assigns(:character).should eq(character)
-      end
-
-      it "re-renders the 'edit' template" do
-        character = Character.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Character.any_instance.stub(:save).and_return(false)
-        put :update, {:id => character.to_param, :character => {}}, valid_session
-        response.should render_template("edit")
-      end
     end
   end
 

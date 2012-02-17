@@ -32,8 +32,8 @@
       <td>
         <%= link_to 'Show', character %>
         <%= link_to 'Edit', edit_non_player_character_path(character) %>
-        <%= link_to 'Destroy', character, confirm: 'Are you sure?',
-              method: :delete %>
+        <%= link_to 'Destroy', character_path(character),
+              confirm: 'Are you sure?', method: :delete %>
       </td>
     </tr>
   <% end %>
@@ -41,4 +41,4 @@
 
 <br />
 
-<%= link_to 'New Character', new_character_path %>
+<%= link_to 'New NPC', new_non_player_character_path %>
