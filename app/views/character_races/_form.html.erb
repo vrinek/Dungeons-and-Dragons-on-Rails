@@ -1,0 +1,11 @@
+<div class="control-group">
+   <%= f.label :name, t("activerecord.attributes.character_race.name", :default => "Name"), :class => "control-label" %>
+  <div class="controls">
+    <%= f.text_field :name %>
+  </div>
+</div>
+
+<div class="form-actions">
+  <button class="btn primary" type="submit">Save</button> or
+	<%= link_to "Cancel", character_races_path %>
+</div>
