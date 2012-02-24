@@ -1,4 +1,5 @@
-<%= form_for(@non_player_character) do |f| %>
+<%= form_for @non_player_character,
+      :html => {:class => "form form-horizontal"} do |f| %>
   <% if @non_player_character.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@non_player_character.errors.count, "error") %> prohibited this character from being saved:</h2>
@@ -11,60 +12,85 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :level %><br />
-    <%= f.number_field :level %>
+  <div class="control-group">
+    <%= f.label :name, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :name %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :alignment %><br />
-    <%= f.select :alignment, options_for_select(Character::ALIGNMENTS) %>
+  <div class="control-group">
+    <%= f.label :level, :class => "control-label" %>
+    <div class="controls">
+      <%= f.number_field :level %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :character_race_code %><br />
-    <%= f.text_field :character_race_code %>
-  </div>
-  <div class="field">
-    <%= f.label :character_role_code %><br />
-    <%= f.text_field :character_role_code %>
+  <div class="control-group">
+    <%= f.label :alignment, :class => "control-label" %>
+    <div class="controls">
+      <%= f.select :alignment, options_for_select(Character::ALIGNMENTS) %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :xp_value %><br />
-    <%= f.number_field :xp_value %>
+  <div class="control-group">
+    <%= f.label :character_race_code, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :character_race_code %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :character_role_code, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :character_role_code %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :strength %><br />
-    <%= f.number_field :strength %>
-  </div>
-  <div class="field">
-    <%= f.label :constitution %><br />
-    <%= f.number_field :constitution %>
-  </div>
-  <div class="field">
-    <%= f.label :dexterity %><br />
-    <%= f.number_field :dexterity %>
-  </div>
-  <div class="field">
-    <%= f.label :intelligence %><br />
-    <%= f.number_field :intelligence %>
-  </div>
-  <div class="field">
-    <%= f.label :wisdom %><br />
-    <%= f.number_field :wisdom %>
-  </div>
-  <div class="field">
-    <%= f.label :charisma %><br />
-    <%= f.number_field :charisma %>
+  <div class="control-group">
+    <%= f.label :xp_value, :class => "control-label" %>
+    <div class="controls">
+      <%= f.number_field :xp_value %>
+    </div>
   </div>
 
-  <div class="actions">
+  <div class="control-group">
+    <%= f.label :strength, :class => "control-label" %>
+    <div class="controls">
+      <%= f.number_field :strength %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :constitution, :class => "control-label" %>
+    <div class="controls">
+      <%= f.number_field :constitution %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :dexterity, :class => "control-label" %>
+    <div class="controls">
+      <%= f.number_field :dexterity %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :intelligence, :class => "control-label" %>
+    <div class="controls">
+      <%= f.number_field :intelligence %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :wisdom, :class => "control-label" %>
+    <div class="controls">
+      <%= f.number_field :wisdom %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :charisma, :class => "control-label" %>
+    <div class="controls">
+      <%= f.number_field :charisma %>
+    </div>
+  </div>
+
+  <div class="form-actions">
     <%= f.submit %>
   </div>
 <% end %>

@@ -1,44 +1,52 @@
-<h1>Listing characters</h1>
+<% content_for :sidebar do %>
+  <h3>Sidebar</h3>
+  <ul class="nav nav-list">
+    <li class="nav-header"> NPCs </li>
+    <li> <%= link_to 'New NPC', new_non_player_character_path %> </li>
+  </ul>
+<% end -%>
 
-<table>
-  <tr>
-    <th>Type</th>
-    <th>Name</th>
-    <th>Level</th>
-    <th>Character race code</th>
-    <th>Strength</th>
-    <th>Constitution</th>
-    <th>Dexterity</th>
-    <th>Intelligence</th>
-    <th>Wisdom</th>
-    <th>Charisma</th>
-    <th></th>
-  </tr>
+<h1> Characters </h1>
 
-  <% @characters.each do |character| %>
+<table class="table table-striped">
+  <thead>
     <tr>
-      <td><%= character.class %></td>
-      <td><%= character.name %></td>
-      <td><%= character.character_race_code %></td>
-      <td><%= character.level %></td>
-
-      <td><%= character.strength %></td>
-      <td><%= character.constitution %></td>
-      <td><%= character.dexterity %></td>
-      <td><%= character.intelligence %></td>
-      <td><%= character.wisdom %></td>
-      <td><%= character.charisma %></td>
-
-      <td>
-        <%= link_to 'Show', character %>
-        <%= link_to 'Edit', edit_non_player_character_path(character) %>
-        <%= link_to 'Destroy', character_path(character),
-              confirm: 'Are you sure?', method: :delete %>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Level</th>
+      <th>Character race code</th>
+      <th>Strength</th>
+      <th>Constitution</th>
+      <th>Dexterity</th>
+      <th>Intelligence</th>
+      <th>Wisdom</th>
+      <th>Charisma</th>
+      <th></th>
     </tr>
-  <% end %>
+  </thead>
+
+  <tbody>
+    <% @characters.each do |character| %>
+      <tr>
+        <td><%= character.class %></td>
+        <td><%= character.name %></td>
+        <td><%= character.character_race_code %></td>
+        <td><%= character.level %></td>
+
+        <td><%= character.strength %></td>
+        <td><%= character.constitution %></td>
+        <td><%= character.dexterity %></td>
+        <td><%= character.intelligence %></td>
+        <td><%= character.wisdom %></td>
+        <td><%= character.charisma %></td>
+
+        <td>
+          <%= link_to 'Show', character %>
+          <%= link_to 'Edit', edit_non_player_character_path(character) %>
+          <%= link_to 'Destroy', character_path(character),
+                confirm: 'Are you sure?', method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-
-<br />
-
-<%= link_to 'New NPC', new_non_player_character_path %>

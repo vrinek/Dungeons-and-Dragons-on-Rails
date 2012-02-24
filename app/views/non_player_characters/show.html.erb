@@ -100,5 +100,12 @@
 </p>
 
 
-<%= link_to 'Edit', edit_non_player_character_path(@non_player_character) %> |
-<%= link_to 'Back', characters_path %>
+
+<div class="form-actions">
+  <%= link_to "Back", characters_path, :class => 'btn'  %>
+  <%= link_to "Edit", edit_non_player_character_path(@non_player_character),
+        :class => 'btn' %>
+  <%= link_to "Delete", character_path(@non_player_character), :method => "delete",
+        :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}",
+        :class => 'btn' %>
+</div>
