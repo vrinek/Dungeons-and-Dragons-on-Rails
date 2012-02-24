@@ -1,6 +1,8 @@
 begin
+  url = ENV['MONGOHQ_URL'] || "mongodb://localhost/sushi_#{Rails.env}"
+
   MongoMapper.config = {
-    Rails.env => { 'uri' => ENV['MONGOHQ_URL'] || 'mongodb://localhost/sushi' }
+    Rails.env => {'uri' => url}
   }
 
   MongoMapper.connect(Rails.env)
