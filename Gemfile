@@ -21,8 +21,16 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem "rspec-rails"
-gem "database_cleaner"
+
+group :test do
+  gem "rspec-rails"
+  gem "database_cleaner"
+end
+
+group :development do
+  gem 'guard'
+  gem 'guard-rspec'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
