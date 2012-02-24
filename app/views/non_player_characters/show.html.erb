@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 
+
 <table class="npc-card">
   <thead>
     <tr> <th colspan="3">
@@ -85,27 +86,21 @@
 </table>
 
 <p>
-  <b>Level bonus:</b>
+  <b>Level bonus</b>
   <%= "%+d" % @non_player_character.level_bonus %>
 </p>
 
 <p>
-  <b>Character race code:</b>
+  <b>Character race code</b>
   <%= @non_player_character.character_race_code %>
-</p>
-
-<p>
-  <b>Character role code:</b>
-  <%= @non_player_character.character_role_code %>
 </p>
 
 
 
 <div class="form-actions">
-  <%= link_to "Back", characters_path, :class => 'btn'  %>
+  <%= link_to "Back", characters_path, class: 'btn'  %>
   <%= link_to "Edit", edit_non_player_character_path(@non_player_character),
-        :class => 'btn' %>
-  <%= link_to "Delete", character_path(@non_player_character), :method => "delete",
-        :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}",
-        :class => 'btn' %>
+        class: 'btn' %>
+  <%= link_to "Delete", character_path(@non_player_character),
+        method: "delete", confirm: "Are you sure?", class: 'btn btn-danger' %>
 </div>
