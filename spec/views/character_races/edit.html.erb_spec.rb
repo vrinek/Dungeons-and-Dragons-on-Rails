@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "character_races/edit.html.erb" do
+describe "character_races/edit" do
   before(:each) do
     @character_race = assign(:character_race, stub_model(CharacterRace,
       :name => "MyString"
