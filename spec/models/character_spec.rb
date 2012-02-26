@@ -54,4 +54,25 @@ describe Character do
       character.check :initiative
     end
   end
+
+  describe "fortitude" do
+    it "is calculated from maximum of strength and constitution" do
+      Character.new(strength: 12, constitution: 16).fortitude.should == 13
+      Character.new(strength: 12, constitution: 10).fortitude.should == 11
+    end
+  end
+
+  describe "reflex" do
+    it "is calculated from maximum of dexterity and intelligence" do
+      Character.new(dexterity: 12, intelligence: 16).reflex.should == 13
+      Character.new(dexterity: 12, intelligence: 10).reflex.should == 11
+    end
+  end
+
+  describe "will" do
+    it "is calculated from maximum of wisdom and charisma" do
+      Character.new(wisdom: 12, charisma: 16).will.should == 13
+      Character.new(wisdom: 12, charisma: 10).will.should == 11
+    end
+  end
 end

@@ -27,9 +27,6 @@ class Character
 
   key :health_points, Integer
   key :armor_class, Integer
-  key :fortitude, Integer
-  key :reflex, Integer
-  key :will, Integer
   key :speed, Integer
 
   key :languages, Array
@@ -56,5 +53,17 @@ class Character
     ability = (SKILLS[ability_or_skill] or ability_or_skill)
 
     self.send(ability).modifier + level_bonus
+  end
+
+  def fortitude
+    10 + AbilityScore.new([strength.to_i, constitution.to_i].max).modifier
+  end
+
+  def reflex
+    10 + AbilityScore.new([dexterity.to_i, intelligence.to_i].max).modifier
+  end
+
+  def will
+    10 + AbilityScore.new([wisdom.to_i, charisma.to_i].max).modifier
   end
 end
