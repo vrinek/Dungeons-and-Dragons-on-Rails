@@ -33,6 +33,10 @@ table.npc-card {
   tbody {
     td {
       font-size: 14px;
+
+      &.to-the-right {
+        text-align: right;
+      }
     }
 
     &.combat-stats, &.more-info {

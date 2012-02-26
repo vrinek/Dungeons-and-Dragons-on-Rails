@@ -31,7 +31,7 @@
         <strong>HP</strong> <%= @non_player_character.health_points %>;
         <strong>Blodied</strong> <%= @non_player_character.bloodied_hp %>
       </td>
-      <td>
+      <td class="to-the-right">
         <strong>Initiative</strong>
         <%= "%+d" % @non_player_character.check(:initiative) %>
       </td>
@@ -44,7 +44,7 @@
         <strong>Reflex</strong> <%= @non_player_character.reflex %>,
         <strong>Will</strong> <%= @non_player_character.will %>
       </td>
-      <td>
+      <td class="to-the-right">
         <strong>Perception</strong>
         <%= "%+d" % @non_player_character.check(:perception) %>
       </td>
@@ -54,7 +54,8 @@
       <td colspan="2">
         <strong>Speed</strong> <%= @non_player_character.speed %>
       </td>
-      <td> </td>
+      <td class="to-the-right">
+      </td>
     </tr>
   </tbody>
 
