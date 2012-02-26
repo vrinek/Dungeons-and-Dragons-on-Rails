@@ -45,7 +45,7 @@
       </td>
       <td>
         <strong>Perception</strong>
-        <%= "%+d" % @non_player_character.wisdom.modifier %>
+        <%= "%+d" % @non_player_character.check(:perception) %>
       </td>
     </tr>
 
