@@ -24,7 +24,7 @@ describe CharactersController do
   # Character. As you add validations to Character, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {size: "medium"}
+    {size: "medium", name: "Samuel"}
   end
 
   # This should return the minimal set of values that should be in the session

@@ -24,7 +24,7 @@ describe CharacterRacesController do
   # CharacterRace. As you add validations to CharacterRace, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {name: "Goblin"}
   end
 
   describe "GET index" do

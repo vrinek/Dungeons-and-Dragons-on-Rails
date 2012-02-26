@@ -2,7 +2,11 @@ class Character
   include MongoMapper::Document
 
   key :name, String
-  key :level, Integer
+  validates_presence_of :name
+
+  key :level, Integer, default: 1
+  validates_presence_of :level
+
   key :alignment, String
   ALIGNMENTS = [
     "Lawful Good", "Good", "Neutral", "Evil", "Chaotic Evil", "Unaligned"
@@ -14,12 +18,12 @@ class Character
 
   belongs_to :character_race
 
-  key :strength, AbilityScore
-  key :constitution, AbilityScore
-  key :dexterity, AbilityScore
-  key :intelligence, AbilityScore
-  key :wisdom, AbilityScore
-  key :charisma, AbilityScore
+  key :strength,     AbilityScore, default: 10
+  key :constitution, AbilityScore, default: 10
+  key :dexterity,    AbilityScore, default: 10
+  key :intelligence, AbilityScore, default: 10
+  key :wisdom,       AbilityScore, default: 10
+  key :charisma,     AbilityScore, default: 10
 
   def level_bonus
     level.to_i / 2

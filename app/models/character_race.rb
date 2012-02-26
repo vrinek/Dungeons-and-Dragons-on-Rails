@@ -2,6 +2,7 @@ class CharacterRace
   include MongoMapper::Document
 
   key :name, String
+  validates_presence_of :name
 
   # TODO should probably move this to a separate decorator soon
   def self.for_select
