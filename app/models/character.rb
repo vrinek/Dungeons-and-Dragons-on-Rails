@@ -4,7 +4,9 @@ class Character
   key :name, String
   key :level, Integer
   key :alignment, String
-  ALIGNMENTS = ["Lawful Good", "Good", "Neutral", "Evil", "Chaotic Evil"]
+  ALIGNMENTS = [
+    "Lawful Good", "Good", "Neutral", "Evil", "Chaotic Evil", "Unaligned"
+  ]
 
   belongs_to :character_race
 
