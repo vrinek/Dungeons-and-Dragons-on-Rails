@@ -1,3 +1,5 @@
+{<img src="https://secure.travis-ci.org/vrinek/Dungeons-and-Dragons-on-Rails.png?branch=master" alt="Build Status" />}[http://travis-ci.org/vrinek/Dungeons-and-Dragons-on-Rails]
+
 == Getting Started
 
 0. I assume you already have ruby 1.9 and rubygems
