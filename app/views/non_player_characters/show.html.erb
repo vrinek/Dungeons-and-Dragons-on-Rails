@@ -24,7 +24,7 @@
   <tbody class="combat-stats">
     <tr>
       <td>
-        <b>Initiative</b> <%= "%+d" % @non_player_character.initiative %>
+        <b>Initiative</b> <%= "%+d" % @non_player_character.check(:initiative) %>
       </td>
 
       <td colspan="2">
@@ -51,17 +51,17 @@
       <td>
         <b>Str</b>
         <%= @non_player_character.strength %>
-        (<%= "%+d" % @non_player_character.strength.modifier %>)
+        (<%= "%+d" % @non_player_character.check(:strength) %>)
       </td>
       <td>
         <b>Dex</b>
         <%= @non_player_character.dexterity %>
-        (<%= "%+d" % @non_player_character.dexterity.modifier %>)
+        (<%= "%+d" % @non_player_character.check(:dexterity) %>)
       </td>
       <td>
         <b>Wis</b>
         <%= @non_player_character.wisdom %>
-        (<%= "%+d" % @non_player_character.wisdom.modifier %>)
+        (<%= "%+d" % @non_player_character.check(:wisdom) %>)
       </td>
     </tr>
 
@@ -69,17 +69,17 @@
       <td>
         <b>Con</b>
         <%= @non_player_character.constitution %>
-        (<%= "%+d" % @non_player_character.constitution.modifier %>)
+        (<%= "%+d" % @non_player_character.check(:constitution) %>)
       </td>
       <td>
         <b>Int</b>
         <%= @non_player_character.intelligence %>
-        (<%= "%+d" % @non_player_character.intelligence.modifier %>)
+        (<%= "%+d" % @non_player_character.check(:intelligence) %>)
       </td>
       <td>
         <b>Cha</b>
         <%= @non_player_character.charisma %>
-        (<%= "%+d" % @non_player_character.charisma.modifier %>)
+        (<%= "%+d" % @non_player_character.check(:charisma) %>)
       </td>
     </tr>
   </tbody>
