@@ -31,8 +31,7 @@
   <%= f.input :charisma %>
 
   <%= f.input :alignment, collection: Character::ALIGNMENTS %>
-  <%= f.input :languages, collection: Character::LANGUAGES,
-    input_html: {multiple: true} %>
+  <%= f.input :languages, collection: Character::LANGUAGES, as: :check_boxes %>
 
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
