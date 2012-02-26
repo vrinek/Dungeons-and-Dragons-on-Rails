@@ -29,7 +29,7 @@
       <tr>
         <td><%= character.class %></td>
         <td><%= link_to character.name, character %></td>
-        <td><%= character.character_race_code %></td>
+        <td><%= character.character_race.try(:name) %></td>
         <td><%= character.level %></td>
 
         <td><%= character.strength %></td>

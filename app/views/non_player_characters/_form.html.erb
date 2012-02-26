@@ -34,9 +34,9 @@
   </div>
 
   <div class="control-group">
-    <%= f.label :character_race_code, :class => "control-label" %>
+    <%= f.label :character_race_id, :class => "control-label" %>
     <div class="controls">
-      <%= f.text_field :character_race_code %>
+      <%= f.select :character_race_id, CharacterRace.all.map{|r| [r.name, r.id]} %>
     </div>
   </div>
   <div class="control-group">

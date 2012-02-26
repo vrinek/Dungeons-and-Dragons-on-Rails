@@ -6,7 +6,7 @@ class Character
   key :alignment, String
   ALIGNMENTS = ["Lawful Good", "Good", "Neutral", "Evil", "Chaotic Evil"]
 
-  key :character_race_code, String
+  belongs_to :character_race
 
   key :strength, AbilityScore
   key :constitution, AbilityScore

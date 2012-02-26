@@ -91,8 +91,8 @@
 </p>
 
 <p>
-  <b>Character race code</b>
-  <%= @non_player_character.character_race_code %>
+  <b>Character race</b>
+  <%= @non_player_character.character_race.try(:name) %>
 </p>
 
 
