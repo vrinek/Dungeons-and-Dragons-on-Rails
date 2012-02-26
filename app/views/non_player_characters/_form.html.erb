@@ -43,7 +43,7 @@
   <div class="control-group">
     <%= f.label :character_race_id, :class => "control-label" %>
     <div class="controls">
-      <%= f.select :character_race_id, CharacterRace.all.map{|r| [r.name, r.id]} %>
+      <%= f.select :character_race_id, CharacterRace.for_select %>
     </div>
   </div>
   <div class="control-group">
