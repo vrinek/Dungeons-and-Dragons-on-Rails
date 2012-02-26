@@ -30,15 +30,17 @@ table.npc-card {
     }
   }
 
-  tbody td {
-    font-size: 14px;
-  }
+  tbody {
+    td {
+      font-size: 14px;
+    }
 
-  tbody.combat-stats {
-    background-color: #e9e8d2;
-  }
+    &.combat-stats, &.more-info {
+      background-color: #e9e8d2;
+    }
 
-  tbody.more-stats {
-    background-color: #cccaad;
+    &.ability-scores {
+      background-color: #cccaad;
+    }
   }
 }

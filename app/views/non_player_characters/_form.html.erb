@@ -10,11 +10,18 @@
 
   <%= f.input :name %>
   <%= f.input :level %>
-  <%= f.input :alignment, collection: Character::ALIGNMENTS %>
+  <%= f.input :character_role, collection: NonPlayerCharacter::ROLES %>
+
   <%= f.input :size, collection: Character::SIZES %>
   <%= f.input :character_race_id, collection: CharacterRace.for_select %>
-  <%= f.input :character_role, collection: NonPlayerCharacter::ROLES %>
   <%= f.input :xp_value %>
+
+  <%= f.input :health_points %>
+  <%= f.input :armor_class %>
+  <%= f.input :fortitude %>
+  <%= f.input :reflex %>
+  <%= f.input :will %>
+  <%= f.input :speed %>
 
   <%= f.input :strength %>
   <%= f.input :constitution %>
@@ -22,6 +29,10 @@
   <%= f.input :intelligence %>
   <%= f.input :wisdom %>
   <%= f.input :charisma %>
+
+  <%= f.input :alignment, collection: Character::ALIGNMENTS %>
+  <%= f.input :languages, collection: Character::LANGUAGES,
+    input_html: {multiple: true} %>
 
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>

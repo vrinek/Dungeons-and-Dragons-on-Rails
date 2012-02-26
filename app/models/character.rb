@@ -25,6 +25,18 @@ class Character
   key :wisdom,       AbilityScore, default: 10
   key :charisma,     AbilityScore, default: 10
 
+  key :health_points, Integer
+  key :armor_class, Integer
+  key :fortitude, Integer
+  key :reflex, Integer
+  key :will, Integer
+  key :speed, Integer
+
+  key :languages, Array
+  LANGUAGES = [
+    "Common", "Deep Speech", "Draconic", "Dwarven", "Elven", "Goblin", "Giant"
+  ]
+
   def level_bonus
     level.to_i / 2
   end
@@ -38,5 +50,9 @@ class Character
     end
 
     self.send(ability).modifier + level_bonus
+  end
+
+  def bloodied_hp
+    health_points.to_i/2
   end
 end
