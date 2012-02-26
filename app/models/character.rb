@@ -42,6 +42,10 @@ class Character
     level.to_i / 2
   end
 
+  def bloodied_hp
+    health_points.to_i / 2
+  end
+
   def check(ability)
     ability = case ability
     when :initiative
@@ -51,9 +55,5 @@ class Character
     end
 
     self.send(ability).modifier + level_bonus
-  end
-
-  def bloodied_hp
-    health_points.to_i/2
   end
 end
