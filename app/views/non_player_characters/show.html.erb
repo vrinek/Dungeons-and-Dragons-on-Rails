@@ -106,7 +106,7 @@
 
       <td colspan="2">
         <strong>Languages</strong>
-        <%= @non_player_character.languages * ", " %>
+        <%= @non_player_character.languages.reject(&:blank?) * ", " %>
       </td>
     </tr>
   </tbody>
