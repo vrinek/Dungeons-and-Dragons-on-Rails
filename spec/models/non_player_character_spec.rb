@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe NonPlayerCharacter do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "understands character role" do
+    NonPlayerCharacter.new(character_role: "Minion")
+  end
+
+  it "understands xp value" do
+    NonPlayerCharacter.new(xp_value: 100)
+  end
 end
