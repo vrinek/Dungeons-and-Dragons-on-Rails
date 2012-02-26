@@ -24,7 +24,7 @@ describe NonPlayerCharactersController do
   # NonPlayerCharacter. As you add validations to NonPlayerCharacter, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {size: "medium"}
   end
 
   # This should return the minimal set of values that should be in the session

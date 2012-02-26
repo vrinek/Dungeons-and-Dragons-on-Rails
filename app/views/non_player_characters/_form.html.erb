@@ -34,6 +34,13 @@
   </div>
 
   <div class="control-group">
+    <%= f.label :size, :class => "control-label" %>
+    <div class="controls">
+      <%= f.select :size, Character::SIZES %>
+    </div>
+  </div>
+
+  <div class="control-group">
     <%= f.label :character_race_id, :class => "control-label" %>
     <div class="controls">
       <%= f.select :character_race_id, CharacterRace.all.map{|r| [r.name, r.id]} %>

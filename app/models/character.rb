@@ -8,6 +8,10 @@ class Character
     "Lawful Good", "Good", "Neutral", "Evil", "Chaotic Evil", "Unaligned"
   ]
 
+  key :size, String
+  validates_presence_of :size
+  SIZES = %w[tiny small medium large huge]
+
   belongs_to :character_race
 
   key :strength, AbilityScore
