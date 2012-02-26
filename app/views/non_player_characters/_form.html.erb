@@ -10,10 +10,10 @@
 
   <%= f.input :name %>
   <%= f.input :level %>
+  <%= f.input :character_race_id, collection: CharacterRace.for_select %>
   <%= f.input :character_role, collection: NonPlayerCharacter::ROLES %>
 
   <%= f.input :size, collection: Character::SIZES %>
-  <%= f.input :character_race_id, collection: CharacterRace.for_select %>
   <%= f.input :xp_value %>
 
   <%= f.input :health_points %>
