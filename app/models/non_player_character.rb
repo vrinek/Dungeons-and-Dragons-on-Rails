@@ -3,5 +3,5 @@ class NonPlayerCharacter < Character
 
   key :xp_value, Integer
 
-  ROLES = %w[Brute Minion Skirmisher]
+  ROLES = %w[Brute Minion Skirmisher Controller]
 end
