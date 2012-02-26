@@ -55,6 +55,7 @@
         <strong>Speed</strong> <%= @non_player_character.speed %>
       </td>
       <td class="to-the-right">
+        <%= @non_player_character.senses.reject(&:blank?) * ", " %>
       </td>
     </tr>
   </tbody>

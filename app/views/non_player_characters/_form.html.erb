@@ -22,6 +22,7 @@
   <%= f.input :custom_reflex %>
   <%= f.input :custom_will %>
   <%= f.input :speed %>
+  <%= f.input :senses, collection: Character::SENSES, as: :check_boxes %>
 
   <%= f.input :strength %>
   <%= f.input :constitution %>

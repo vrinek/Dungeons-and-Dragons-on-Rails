@@ -36,6 +36,9 @@ class Character
     "Primordial"
   ]
 
+  key :senses, Array
+  SENSES = ["Low-light vision"]
+
   SKILLS = {
     initiative: :dexterity,
     perception: :wisdom
