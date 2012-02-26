@@ -38,6 +38,11 @@ class Character
     "Primordial"
   ]
 
+  SKILLS = {
+    initiative: :dexterity,
+    perception: :wisdom
+  }
+
   def level_bonus
     level.to_i / 2
   end
@@ -46,13 +51,9 @@ class Character
     health_points.to_i / 2
   end
 
-  def check(ability)
-    ability = case ability
-    when :initiative
-      :dexterity
-    else
-      ability
-    end
+  # ability and skill checks
+  def check(ability_or_skill)
+    ability = (SKILLS[ability_or_skill] or ability_or_skill)
 
     self.send(ability).modifier + level_bonus
   end
