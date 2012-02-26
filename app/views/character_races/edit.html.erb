@@ -1,4 +1,6 @@
-<%= form_for @character_race, :url => character_race_path(@character_race), :html => { :class => "edit_character_race", :id => "edit_character_race" } do |f| -%>
-  <input name="_method" type="hidden" value="put" />
-  <%= render :partial => "form", :locals => {:f => f} %>
-<% end -%>
+<h1>Editing Race</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @character_race %> |
+<%= link_to 'Back', character_races_path %>

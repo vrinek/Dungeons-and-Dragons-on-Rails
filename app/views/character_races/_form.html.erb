@@ -1,11 +1,14 @@
-<div class="control-group">
-   <%= f.label :name, t("activerecord.attributes.character_race.name", :default => "Name"), :class => "control-label" %>
-  <div class="controls">
-    <%= f.text_field :name %>
-  </div>
-</div>
+<%= simple_form_for @character_race, html: {class: "form-horizontal"} do |f| %>
+  <% if f.error_notification %>
+    <div class="alert alert-error fade in">
+      <a class="close" data-dismiss="alert" href="#">&times;</a>
+      <%= f.error_notification %>
+    </div>
+  <% end %>
 
-<div class="form-actions">
-  <button class="btn primary" type="submit">Save</button> or
-	<%= link_to "Cancel", character_races_path %>
-</div>
+  <%= f.input :name %>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+  </div>
+<% end -%>
