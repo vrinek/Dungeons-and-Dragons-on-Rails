@@ -34,7 +34,8 @@ class Character
 
   key :languages, Array
   LANGUAGES = [
-    "Common", "Deep Speech", "Draconic", "Dwarven", "Elven", "Goblin", "Giant"
+    "Common", "Deep Speech", "Draconic", "Dwarven", "Elven", "Goblin", "Giant",
+    "Primordial"
   ]
 
   def level_bonus
