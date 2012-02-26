@@ -13,7 +13,7 @@
   <%= f.input :alignment, collection: Character::ALIGNMENTS %>
   <%= f.input :size, collection: Character::SIZES %>
   <%= f.input :character_race_id, collection: CharacterRace.for_select %>
-  <%= f.input :character_role_code %>
+  <%= f.input :character_role, collection: NonPlayerCharacter::ROLES %>
   <%= f.input :xp_value %>
 
   <%= f.input :strength %>
