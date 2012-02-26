@@ -1,8 +1,11 @@
 require 'spec_helper'
 
 describe "NonPlayerCharacters" do
+  let(:race) { CharacterRace.create name: "Human" }
+
   let(:npc) {
-    NonPlayerCharacter.create name: "Samuel", size: "medium"
+    NonPlayerCharacter.create name: "Samuel", size: "medium",
+      character_race: race
   }
 
   describe "GET /non_player_characters/:id" do

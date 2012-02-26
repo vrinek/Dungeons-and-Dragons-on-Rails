@@ -20,11 +20,13 @@ require 'spec_helper'
 
 describe NonPlayerCharactersController do
 
+  let(:race) { CharacterRace.create name: "Human" }
+
   # This should return the minimal set of attributes required to create a valid
   # NonPlayerCharacter. As you add validations to NonPlayerCharacter, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {size: "medium", name: "Samuel"}
+    {size: "medium", name: "Samuel", character_race_id: race.id}
   end
 
   # This should return the minimal set of values that should be in the session

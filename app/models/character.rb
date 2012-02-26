@@ -17,6 +17,7 @@ class Character
   SIZES = %w[tiny small medium large huge]
 
   belongs_to :character_race
+  validates_presence_of :character_race
 
   key :strength,     AbilityScore, default: 10
   key :constitution, AbilityScore, default: 10
