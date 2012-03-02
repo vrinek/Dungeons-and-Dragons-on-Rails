@@ -1,0 +1,21 @@
+<%= simple_form_for @encounter, html: {class: "form-horizontal"} do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+
+    <% NonPlayerCharacter.all.each do |npc| %>
+      <div class="control-group">
+        <%= label_tag "encounter[npcs][#{npc.id}]", npc.name %>
+        <div class="controls">
+          <%= number_field_tag "encounter[npcs][#{npc.id}]",
+            @encounter.npcs[npc.id.to_s] %>
+        </div>
+      </div>
+    <% end -%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn-primary" %>
+  </div>
+<% end %>

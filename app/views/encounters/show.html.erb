@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h2> <%= @encounter.name %> </h2>
+
+<div class="characters">
+  <% @encounter.npcs.each do |id, count| %>
+    <% if count.to_i > 0 %>
+      <div class="character">
+        <div class="count"> <%= count %>&times; </div>
+        <%= render "non_player_characters/npc_card",
+          :npc => NonPlayerCharacter.find(id) %>
+      </div>
+    <% end -%>
+  <% end -%>
+</div>
+
+<div class="form-actions" style='clear:both'>
+  <%= link_to 'Back', encounters_path, class: "btn" %>
+  <%= link_to 'Edit', edit_encounter_path(@encounter), class: "btn" %>
+  <%= link_to 'Delete', @encounter, method: "delete", confirm: "Are you sure?",
+    class: 'btn btn-danger' %>
+</div>

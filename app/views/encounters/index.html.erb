@@ -1,0 +1,27 @@
+<h1>
+  Encounters
+  <%= link_to 'New encounter', new_encounter_path, class: "btn" %>
+</h1>
+
+<table class="table table-striped">
+  <thead> <tr>
+    <th> Name </th>
+    <th> NPCs </th>
+    <th> </th>
+  </tr> </thead>
+
+  <tbody>
+    <% @encounters.each do |encounter| %>
+      <tr>
+        <td><%= encounter.name %></td>
+        <td><%= encounter.npcs.inspect %></td>
+        <td>
+          <%= link_to 'Show', encounter, class: "btn" %>
+          <%= link_to 'Edit', edit_encounter_path(encounter), class: "btn" %>
+          <%= link_to 'Destroy', encounter, confirm: 'Are you sure?',
+            method: :delete, class: "btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

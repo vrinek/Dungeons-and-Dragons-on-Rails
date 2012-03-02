@@ -1,4 +1,6 @@
 DnDoR::Application.routes.draw do
+  resources :encounters
+
   resources :character_races
 
   resources :characters, :only => [:index, :destroy]
