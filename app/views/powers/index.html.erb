@@ -1,0 +1,37 @@
+<h1>Listing powers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Requirement</th>
+    <th>Trigger</th>
+    <th>Attack</th>
+    <th>Hit</th>
+    <th>Miss</th>
+    <th>Effect</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @powers.each do |power| %>
+  <tr>
+    <td><%= power.name %></td>
+    <td><%= power.description %></td>
+    <td><%= power.requirement %></td>
+    <td><%= power.trigger %></td>
+    <td><%= power.attack %></td>
+    <td><%= power.hit %></td>
+    <td><%= power.miss %></td>
+    <td><%= power.effect %></td>
+    <td><%= link_to 'Show', power %></td>
+    <td><%= link_to 'Edit', edit_power_path(power) %></td>
+    <td><%= link_to 'Destroy', power, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Power', new_power_path %>

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @power.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @power.description %>
+</p>
+
+<p>
+  <b>Requirement:</b>
+  <%= @power.requirement %>
+</p>
+
+<p>
+  <b>Trigger:</b>
+  <%= @power.trigger %>
+</p>
+
+<p>
+  <b>Attack:</b>
+  <%= @power.attack %>
+</p>
+
+<p>
+  <b>Hit:</b>
+  <%= @power.hit %>
+</p>
+
+<p>
+  <b>Miss:</b>
+  <%= @power.miss %>
+</p>
+
+<p>
+  <b>Effect:</b>
+  <%= @power.effect %>
+</p>
+
+
+<%= link_to 'Edit', edit_power_path(@power) %> |
+<%= link_to 'Back', powers_path %>

@@ -1,4 +1,6 @@
 DnDoR::Application.routes.draw do
+  resources :powers
+
   resources :encounters
 
   resources :character_races
