@@ -1,15 +1,13 @@
-<% content_for :sidebar do %>
-  <h3> Actions </h3>
-  <ul class="nav nav-list">
-    <li> <%= link_to "New race", new_character_race_path %> </li>
-  </ul>
-<% end -%>
+<h1>
+  Character Races
+  <%= link_to "New race", new_character_race_path, :class => "btn" %>
+</h1>
 
-<h1>Character Races</h1>
 <table class="table table-striped">
   <thead>
     <tr>
       <th> Name </th>
+      <th> Description </th>
       <th> </th>
     </tr>
   </thead>
@@ -18,6 +16,9 @@
       <tr>
         <td>
           <%= link_to character_race.name, character_race_path(character_race) %>
+        </td>
+        <td>
+          <%= character_race.description %>
         </td>
         <td>
           <%= link_to "Show", character_race, class: "btn" %>

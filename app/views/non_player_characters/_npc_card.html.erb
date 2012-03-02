@@ -1,0 +1,110 @@
+<table class="npc-card">
+  <thead>
+    <tr> <th colspan="3">
+      <span class="name"><%= npc.name %></span>
+      <span class="level-and-role">
+        Level
+        <%= npc.level %>
+        <%= npc.character_role %>
+      </span>
+    </th> </tr>
+
+    <tr> <th colspan="3">
+      <span class="description">
+        <%= npc.size.titleize %>
+        <%= npc.character_race.description %>
+      </span>
+      <span class="xp-value">
+        XP
+        <%= npc.xp_value %>
+      </span>
+    </th> </tr>
+  </thead>
+
+  <tbody class="combat-stats">
+    <tr>
+      <td colspan="2">
+        <strong>HP</strong> <%= npc.health_points %>;
+        <strong>Blodied</strong> <%= npc.bloodied_hp %>
+      </td>
+      <td class="to-the-right">
+        <strong>Initiative</strong>
+        <%= "%+d" % npc.check(:initiative) %>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="2">
+        <strong>AC</strong> <%= npc.armor_class %>,
+        <strong>Fortitude</strong> <%= npc.fortitude %>,
+        <strong>Reflex</strong> <%= npc.reflex %>,
+        <strong>Will</strong> <%= npc.will %>
+      </td>
+      <td class="to-the-right">
+        <strong>Perception</strong>
+        <%= "%+d" % npc.check(:perception) %>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="2">
+        <strong>Speed</strong> <%= npc.speed %>
+      </td>
+      <td class="to-the-right">
+        <%= npc.senses.reject(&:blank?) * ", " %>
+      </td>
+    </tr>
+  </tbody>
+
+  <tbody class="ability-scores">
+    <tr>
+      <td>
+        <strong>Str</strong>
+        <%= npc.strength %>
+        (<%= "%+d" % npc.check(:strength) %>)
+      </td>
+      <td>
+        <strong>Dex</strong>
+        <%= npc.dexterity %>
+        (<%= "%+d" % npc.check(:dexterity) %>)
+      </td>
+      <td>
+        <strong>Wis</strong>
+        <%= npc.wisdom %>
+        (<%= "%+d" % npc.check(:wisdom) %>)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <strong>Con</strong>
+        <%= npc.constitution %>
+        (<%= "%+d" % npc.check(:constitution) %>)
+      </td>
+      <td>
+        <strong>Int</strong>
+        <%= npc.intelligence %>
+        (<%= "%+d" % npc.check(:intelligence) %>)
+      </td>
+      <td>
+        <strong>Cha</strong>
+        <%= npc.charisma %>
+        (<%= "%+d" % npc.check(:charisma) %>)
+      </td>
+    </tr>
+  </tbody>
+
+  <tbody class="more-info">
+    <tr>
+      <td>
+        <strong>Alignment</strong>
+        <%= npc.alignment %>
+      </td>
+
+      <td colspan="2">
+        <strong>Languages</strong>
+        <%= npc.languages.reject(&:blank?) * ", " %>
+      </td>
+    </tr>
+  </tbody>
+</table>

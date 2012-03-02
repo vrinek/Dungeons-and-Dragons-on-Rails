@@ -2,12 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+h1 a.btn {
+  font-weight: normal;
+  position: relative;
+  bottom: 0.5em;
+}
+
+div.character {
+  border-radius: 0.5em;
+  background-color: #eee;
+  padding: 1em;
+  width: 40em;
+  margin: 1em;
+  float: left;
+
+  .actions {
+    margin-top: 1em;
+  }
+}
+
 table.npc-card {
-  width: 500px;
+  width: 40em;
   border-collapse: collapse;
 
   th, td {
-    padding: 2px 10px;
+    padding: 0.3em 0.5em;
     text-align: left;
     font-weight: normal;
   }
@@ -18,11 +37,11 @@ table.npc-card {
 
     tr:first-child th {
       font-weight: bold;
-      font-size: 18px;
+      font-size: 140%;
     }
 
     th {
-      font-size: 16px;
+      font-size: 120%;
     }
 
     .level-and-role, .xp-value {
@@ -32,7 +51,7 @@ table.npc-card {
 
   tbody {
     td {
-      font-size: 14px;
+      font-size: 110%;
 
       &.to-the-right {
         text-align: right;

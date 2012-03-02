@@ -1,11 +1,8 @@
 require 'spec_helper'
 
 describe "characters/index" do
-  before(:each) do
-    assign(:characters, [
-      stub_model(Character),
-      stub_model(Character)
-    ])
+  before do
+    assign :characters, []
   end
 
   it "works!" do
