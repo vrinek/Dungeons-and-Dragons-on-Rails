@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "encounters/edit.html.erb" do
+describe "encounters/edit" do
   before(:each) do
     @encounter = assign(:encounter, stub_model(Encounter,
       :name => "MyString",

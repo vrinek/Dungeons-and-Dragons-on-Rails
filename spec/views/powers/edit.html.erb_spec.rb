@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "powers/edit.html.erb" do
+describe "powers/edit" do
   before(:each) do
     @power = assign(:power, stub_model(Power,
       :name => "MyString",

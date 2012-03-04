@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "powers/show.html.erb" do
+describe "powers/show" do
   before(:each) do
     @power = assign(:power, stub_model(Power,
       :name => "Name",
