@@ -2,19 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 a.btn {
-  font-weight: normal;
-  position: relative;
-  bottom: 0.5em;
-}
-
 div.character {
   border-radius: 0.5em;
   background-color: #eee;
   padding: 1em;
   width: 40em;
+  max-width: 90%;
   margin: 1em;
   float: left;
+
+  @media screen and (max-width: 768px) {
+    padding: 3%;
+    margin: 1em 0;
+    max-width: 94%;
+  }
 
   .actions {
     margin-top: 1em;
@@ -22,7 +23,7 @@ div.character {
 }
 
 table.npc-card {
-  width: 40em;
+  width: 100%;
   border-collapse: collapse;
 
   th, td {
