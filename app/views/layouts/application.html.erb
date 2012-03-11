@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <title> Dungeons and Dragons on Rails </title>
     <%= csrf_meta_tags %>
 
@@ -12,48 +13,20 @@
 
     <!-- Le styles -->
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <style>
-      body {
-        /* 60px to make the container go all the way to the bottom of the topbar */
-        padding-top: 60px;
-      }
-    </style>
+    <%= javascript_include_tag "application" %>
   </head>
 
   <body>
-    <%= render "layouts/fork_me" %>
+    <nav>
+      <%= link_to "Encounters", encounters_path %>
+      <%= link_to "Characters", characters_path %>
+      <%= link_to "Races", character_races_path %>
+      <%= link_to "Powers", powers_path %>
+      <%= link_to "Initiative", initiative_path %>
+    </nav>
 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="/">DnDoR</a>
-          <div class="container nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "Encounters", encounters_path %></li>
-              <li><%= link_to "Characters", characters_path %></li>
-              <li><%= link_to "Races", character_races_path %></li>
-              <li><%= link_to "Powers", powers_path %></li>
-              <li><%= link_to "Initiative", initiative_path %></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <div id="page">
+      <%= yield %>
     </div>
-
-    <div class="container">
-      <div class="content">
-        <div class="row">
-          <div class="span14">
-            <%= yield %>
-          </div>
-        </div>
-      </div>
-    </div> <!-- /container -->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <%= javascript_include_tag "application" %>
-
   </body>
 </html>

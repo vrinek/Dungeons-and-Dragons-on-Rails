@@ -1,0 +1,40 @@
+body {
+  background-color: #ddd;
+
+  > nav {
+    background-color: #222;
+    padding: 1em 5%;
+    margin-bottom: 1em;
+
+    a {
+      color: #ddd;
+      padding: 1em 2em;
+
+      &:visited {
+        color: #ddd;
+      }
+
+      &:hover {
+        background-color: black;
+        text-decoration: none;
+      }
+    }
+  }
+
+  #page {
+    margin: 0 auto;
+    width: 95%;
+    background-color: white;
+
+    h1 {
+      font-size: 2em;
+      padding-left: 1.5em;
+
+      a.btn {
+        font-weight: normal;
+        position: relative;
+        bottom: 0.5em;
+      }
+    }
+  }
+}
