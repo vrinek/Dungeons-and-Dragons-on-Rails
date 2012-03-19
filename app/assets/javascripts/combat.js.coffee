@@ -21,6 +21,24 @@
         event.preventDefault()
         @addNewLine()
 
+    $('#start-combat').on 'click', (event) =>
+      $('tr', @tbody).first().addClass('current-turn')
+      $(event.target).hide()
+      $('#advance-turn').show()
+      false
+
+    $('#advance-turn').hide().on 'click', (event) =>
+      currentTr = $('tr.current-turn', @tbody)
+      nextTr = currentTr.next('tr')
+      currentTr.removeClass 'current-turn'
+
+      if nextTr.length != 0
+        nextTr.addClass 'current-turn'
+      else
+        $('tr', @tbody).first().addClass 'current-turn'
+
+      false
+
   trFor: (name, initiative) ->
     '<tr data-initiative="' + initiative + '">' +
       '<td>' + name + '</td>' +

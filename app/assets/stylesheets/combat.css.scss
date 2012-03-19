@@ -1,3 +1,7 @@
 // Place all the styles related to the Combat controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#characters-list tr.current-turn {
+  background-color: #ffc;
+}
