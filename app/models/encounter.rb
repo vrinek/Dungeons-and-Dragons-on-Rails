@@ -10,7 +10,11 @@ class Encounter
 
   def explain_npcs
     npcs.map do |npc|
-      "#{npc_counts[npc.id]}x #{npc.name}"
+      "#{count_of(npc)}x #{npc.name}"
     end * ", "
+  end
+
+  def count_of(npc)
+    npc_counts[npc.id.to_s].to_i
   end
 end

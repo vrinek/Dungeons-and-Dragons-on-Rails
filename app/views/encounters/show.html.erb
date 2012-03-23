@@ -4,9 +4,9 @@
 
 <div class="characters">
   <% @encounter.npcs.each do |npc| %>
-    <% if @encounter.npc_counts[npc.id].to_i > 0 %>
+    <% if @encounter.count_of(npc) > 0 %>
       <div class="character">
-        <div class="count"> <%= @encounter.npc_counts[npc.id].to_i %>&times; </div>
+        <div class="count"> <%= @encounter.count_of(npc) %>&times; </div>
         <%= render "non_player_characters/npc_card", :npc => npc %>
       </div>
     <% end -%>

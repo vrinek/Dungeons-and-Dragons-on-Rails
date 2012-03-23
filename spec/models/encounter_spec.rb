@@ -6,4 +6,5 @@ describe Encounter do
   subject { Encounter.new }
 
   it { should respond_to(:explain_npcs) }
+  it { should respond_to(:count_of) }
 end
