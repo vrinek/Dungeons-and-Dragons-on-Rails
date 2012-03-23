@@ -75,4 +75,10 @@ describe Character do
       Character.new(wisdom: 12, charisma: 10).will.should == 11
     end
   end
+
+  describe "roll_initiative" do
+    it "returns an initiative roll" do
+      Factory(:character).roll_initiative.should be_a(Fixnum)
+    end
+  end
 end

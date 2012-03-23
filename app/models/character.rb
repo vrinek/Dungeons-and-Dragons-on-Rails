@@ -1,5 +1,6 @@
 class Character
   include MongoMapper::Document
+  include DiceRolls
 
   key :name, String
   validates_presence_of :name
@@ -69,5 +70,9 @@ class Character
 
   def will
     10 + AbilityScore.new([wisdom.to_i, charisma.to_i].max).modifier
+  end
+
+  def roll_initiative
+    D(20) + check(:initiative)
   end
 end
