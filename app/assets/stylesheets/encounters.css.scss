@@ -21,7 +21,20 @@
   }
 }
 
-#encounters-table {
-  background-color: white;
-  padding: 0.5em;
+#encounters-list {
+  margin: 0;
+
+  li {
+    background-color: white;
+    padding: 0.5em;
+    list-style: none;
+    float: left;
+
+    margin: 0 1em 1em 0;
+
+    .name {
+      font-size: 1.5em;
+      margin-bottom: 0.4em;
+    }
+  }
 }

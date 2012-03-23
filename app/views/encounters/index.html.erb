@@ -3,28 +3,20 @@
   <%= link_to 'New encounter', new_encounter_path, class: "btn" %>
 </h1>
 
-<table class="table table-bordered table-striped" id="encounters-table">
-  <thead> <tr>
-    <th> Name </th>
-    <th> NPCs </th>
-    <th> </th>
-  </tr> </thead>
-
-  <tbody>
-    <% @encounters.each do |encounter| %>
-      <tr>
-        <td><%= encounter.name %></td>
-        <td><%= encounter.explain_npcs %></td>
-        <td>
-          <%= link_to 'Show', encounter, class: "btn" %>
-          <%= link_to 'Edit', edit_encounter_path(encounter), class: "btn" %>
-          <%= link_to 'Destroy', encounter, confirm: 'Are you sure?',
-            method: :delete, class: "btn btn-danger" %>
-          <%= link_to 'Roll initiative',
-            initiative_path(:encounter_id => encounter.id),
-            class: "btn btn-warning" %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<ul id="encounters-list" class="cf">
+  <% @encounters.each do |encounter| %>
+    <li>
+      <div class="name"><%= encounter.name %></div>
+      <div class="npcs"><%= simple_format encounter.explain_npcs %></div>
+      <div class="actions">
+        <%= link_to 'Show', encounter, class: "btn" %>
+        <%= link_to 'Edit', edit_encounter_path(encounter), class: "btn" %>
+        <%= link_to 'Destroy', encounter, confirm: 'Are you sure?',
+          method: :delete, class: "btn btn-danger" %>
+        <%= link_to 'Roll initiative',
+          initiative_path(:encounter_id => encounter.id),
+          class: "btn btn-warning" %>
+      </div>
+    </li>
+  <% end %>
+</ul>
