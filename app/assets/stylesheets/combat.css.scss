@@ -17,10 +17,17 @@
 
   input {
     margin: 0;
+
+    @media screen and (max-width: 768px) {
+      width: 60%;
+      display: inline-block;
+    }
   }
 
   p {
-    float: left;
-    margin-right: 2em;
+    @media screen and (min-width: 768px) {
+      float: left;
+      margin-right: 2em;
+    }
   }
 }
