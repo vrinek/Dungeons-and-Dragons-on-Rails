@@ -10,10 +10,13 @@
 
   <%= f.input :name %>
   <%= f.input :level %>
-  <%= f.input :character_race_id, collection: CharacterRace.for_select %>
-  <%= f.input :character_role, collection: NonPlayerCharacter::ROLES %>
+  <%= f.input :character_race_id, collection: CharacterRace.for_select,
+    input_html: {class: "chzn-select"} %>
+  <%= f.input :character_role, collection: NonPlayerCharacter::ROLES,
+    input_html: {class: "chzn-select"} %>
 
-  <%= f.input :size, collection: Character::SIZES %>
+  <%= f.input :size, collection: Character::SIZES,
+    input_html: {class: "chzn-select"} %>
   <%= f.input :xp_value %>
 
   <%= f.input :health_points %>
@@ -22,7 +25,8 @@
   <%= f.input :custom_reflex %>
   <%= f.input :custom_will %>
   <%= f.input :speed %>
-  <%= f.input :senses, collection: Character::SENSES, as: :check_boxes %>
+  <%= f.input :senses, collection: Character::SENSES,
+    input_html: {class: "chzn-select", multiple: true} %>
 
   <%= f.input :strength %>
   <%= f.input :constitution %>
@@ -31,8 +35,10 @@
   <%= f.input :wisdom %>
   <%= f.input :charisma %>
 
-  <%= f.input :alignment, collection: Character::ALIGNMENTS %>
-  <%= f.input :languages, collection: Character::LANGUAGES, as: :check_boxes %>
+  <%= f.input :alignment, collection: Character::ALIGNMENTS,
+    input_html: {class: "chzn-select"} %>
+  <%= f.input :languages, collection: Character::LANGUAGES,
+    input_html: {class: "chzn-select", multiple: true} %>
 
   <div class="form-actions">
     <%= f.button :submit, class: 'btn-primary' %>
