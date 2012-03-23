@@ -1,10 +1,11 @@
 require 'spec_helper'
 
 describe Encounter do
-  pending "add some examples to (or delete) #{__FILE__}"
-
-  subject { Encounter.new }
+  subject { Factory(:encounter) }
 
   it { should respond_to(:explain_npcs) }
   it { should respond_to(:count_of) }
+  it { should respond_to(:roll_initiative) }
+
+  its(:roll_initiative) { should be_a(Hash) }
 end
