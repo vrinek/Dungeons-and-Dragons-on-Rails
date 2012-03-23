@@ -4,7 +4,8 @@ describe "encounters/show" do
   before(:each) do
     @encounter = assign(:encounter, stub_model(Encounter,
       :name => "Name",
-      :npcs => ""
+      :npcs => [stub_model(NonPlayerCharacter, :id => '67', :size => 'Uber', :character_race => stub_model(CharacterRace))],
+      :npc_counts => {'67' => 2}
     ))
   end
 

@@ -2,12 +2,15 @@ class Encounter
   include MongoMapper::Document
 
   key :name, String
-  key :npcs, Hash
+  key :npc_counts, Hash
+
+  def npcs
+    NonPlayerCharacter.where(:id => npc_counts.keys)
+  end
 
   def explain_npcs
-    npcs.map do |npc_id, count|
-      npc = NonPlayerCharacter.find(npc_id)
-      "#{count}x #{npc.name}"
+    npcs.map do |npc|
+      "#{npc_counts[npc.id]}x #{npc.name}"
     end * ", "
   end
 end
