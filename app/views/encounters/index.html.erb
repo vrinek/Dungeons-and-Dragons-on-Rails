@@ -14,7 +14,7 @@
     <% @encounters.each do |encounter| %>
       <tr>
         <td><%= encounter.name %></td>
-        <td><%= encounter.npcs.inspect %></td>
+        <td><%= encounter.explain_npcs %></td>
         <td>
           <%= link_to 'Show', encounter, class: "btn" %>
           <%= link_to 'Edit', edit_encounter_path(encounter), class: "btn" %>
