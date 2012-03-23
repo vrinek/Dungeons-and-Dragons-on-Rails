@@ -39,6 +39,10 @@
 
 * It _should_ be deployable on Heroku.
 
+== Demo
+
+* http://dnd-onrails-demo.herokuapp.com on Heroku (be gentle)
+
 == Status
 
 === Fully Working
