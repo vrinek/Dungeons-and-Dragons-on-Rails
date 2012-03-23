@@ -2,6 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#characters-list tr.current-turn {
-  background-color: #ffc;
+#initiative-table {
+  background-color: white;
+  padding: 0.5em;
+
+  #characters-list tr.current-turn {
+    background-color: #ffc;
+  }
+}
+
+#initiative-form {
+  padding: 1em;
+  background-color: white;
+
+  input {
+    margin: 0;
+  }
+
+  p {
+    float: left;
+    margin-right: 2em;
+  }
 }

@@ -1,6 +1,6 @@
 <h1>Combat initiative</h1>
 
-<table class="table table-bordered">
+<table class="table table-bordered" id="initiative-table">
   <thead><tr>
     <th>Character</th>
     <th>Initiative score</th>
@@ -10,8 +10,19 @@
   <tbody id="characters-list"></tbody>
 </table>
 
-<form>
-  <input type="text" class="span6" id="input-line" />
-  <a href="#" class="btn" id="start-combat"> Start </a>
-  <a href="#" class="btn" id="advance-turn"> Next! </a>
+<form id="initiative-form" class="cf">
+  <p>
+    <input type="text" class="span6" id="input-line" />
+    <a href="#" class="btn" id="start-combat"> Start </a>
+    <a href="#" class="btn" id="advance-turn"> Next! </a>
+  </p>
+
+  <p class="help-block">
+    Separate character name from initiative score by a space
+    (the last number is the initiative). Examples:<br/>
+    "Jake 15" <br/>
+    "Goblin Cutter 7" <br/>
+    "The 4th Greatest Rogue 28" <br/>
+    <del> "Someone with no initiative" </del>
+  </p>
 </form>
