@@ -4,25 +4,59 @@
 
 0. I assume you already have ruby 1.9 and rubygems
 
-1. Install bundler:
+1. Get MongoDB (http://www.mongodb.org/display/DOCS/Quickstart) and run it:
+    mongod
+
+2. Install bundler:
     gem install bundler
 
-2. (optional for rbenv) rehash rbenv binaries:
+3. (optional for rbenv) rehash rbenv binaries:
     rbenv rehash
 
-3. Bundle the gems:
+4. Bundle the gems:
     bundle install
 
-4. Run the specs (optional):
+5. Run the specs (optional):
     bundle exec rspec spec
 
-5. Start the server:
+6. Start the server:
     bundle exec rails server
 
-6. Point your browser to:
+7. Point your browser to:
     http://localhost:3000
 
 
+== Notes
+
+* Very early in development, <b>might eat your cat</b>.
+
+* The database it uses is named +sushi_+ + +production/development/test+ for no
+  apparent reason.
+
+* This web app is supposed to look good and be usable on *Desktops* (large
+  screens), *Laptops* (med-sized screens), *Tablets* (small screens) and
+  *Smartphones* (tiny screens)
+
+* It _should_ be deployable on Heroku.
+
+== Status
+
+=== Fully Working
+
+* Combat initiative table
+
+=== Partially Working
+
+* NPCs (no powers)
+* Encounters
+* Races
+
+=== Work In Progress
+
+* Powers
+
 == More resources
 
-* The Getting Started Guide for Rails: http://guides.rubyonrails.org/getting_started.html
+* The Getting Started Guide for Rails:
+  http://guides.rubyonrails.org/getting_started.html
+  in case you want to hack/contribute
