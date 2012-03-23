@@ -30,6 +30,8 @@
 
 * Very early in development, <b>might eat your cat</b>.
 
+* Has no access control yet.  *Anyone* can do *anything*.
+
 * The database it uses is named +sushi_+ + +production/development/test+ for no
   apparent reason.
 
