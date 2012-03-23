@@ -26,3 +26,11 @@
     <del> "Someone with no initiative" </del>
   </p>
 </form>
+
+<% if @initiatives %>
+  <script type="text/javascript">
+    $(function(){
+      Initiative.addInitiatives(<%=raw @initiatives.to_json %>)
+    })
+  </script>
+<% end -%>

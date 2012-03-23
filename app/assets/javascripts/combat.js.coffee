@@ -3,8 +3,14 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 @Initiative =
-  addNewLine: ->
-    if line = this.inputLine.val().match /^(.+) (\d+)$/
+  addInitiatives: (initiatives) ->
+    for line in initiatives
+      @addNewLine line
+
+  addNewLine: (inputLine) ->
+    inputLine ||= this.inputLine.val()
+
+    if line = inputLine.match /^(.+) (\d+)$/
       tr = @trFor line[1], line[2]
       @tbody.append tr
       @sortTable()

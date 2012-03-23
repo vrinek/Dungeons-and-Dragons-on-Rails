@@ -18,4 +18,6 @@
   <%= link_to 'Edit', edit_encounter_path(@encounter), class: "btn" %>
   <%= link_to 'Delete', @encounter, method: "delete", confirm: "Are you sure?",
     class: 'btn btn-danger' %>
+  <%= link_to 'Roll initiative', initiative_path(:encounter_id => @encounter.id),
+    class: "btn btn-warning" %>
 </div>
