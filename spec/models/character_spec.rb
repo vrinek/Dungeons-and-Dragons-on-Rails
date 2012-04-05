@@ -78,7 +78,7 @@ describe Character do
 
   describe "roll_initiative" do
     it "returns an initiative roll" do
-      Factory(:character).roll_initiative.should be_a(Fixnum)
+      FactoryGirl.create(:character).roll_initiative.should be_a(Fixnum)
     end
   end
 end
