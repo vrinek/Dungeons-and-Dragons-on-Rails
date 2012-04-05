@@ -10,6 +10,7 @@
  *
  *= require chosen
  *= require bootstrap
+ *= require micro_clearfix
  *= require_self
  *= require_tree .
 */
