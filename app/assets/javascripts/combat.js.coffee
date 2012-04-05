@@ -56,9 +56,7 @@
     trs = $('tr', @tbody)
 
     sortByInitiative = (a, b) ->
-      a = $(a).data('initiative')
-      b = $(b).data('initiative')
-      (a < b) ? -1 : ((a > b) ? 1 : 0)
+      $(b).data('initiative') - $(a).data('initiative')
 
     sorted = $(trs.get().sort(sortByInitiative))
 
