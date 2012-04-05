@@ -38,7 +38,7 @@ class Character
   ]
 
   key :senses, Array
-  SENSES = ["Low-light vision"]
+  SENSES = ["Low-light vision", "Darkvision"]
 
   SKILLS = {
     initiative: :dexterity,
