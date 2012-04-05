@@ -1,6 +1,6 @@
 class NonPlayerCharacter < Character
   key :character_role, String
-  ROLES = %w[Brute Minion Skirmisher Controller]
+  ROLES = %w[Brute Minion Skirmisher Controller Lurker Artillery Soldier].sort
 
   key :xp_value, Integer
 
