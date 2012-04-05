@@ -8,15 +8,17 @@
 
     .count {
       background-color: #673;
-      float: left;
-      padding: 0.5em;
+      color: #341;
       border-radius: 0.3em;
       font-size: 150%;
       font-weight: bold;
+
+      padding: 0.5em;
+
       position: absolute;
       left: 50%;
       top: 1.1em;
-      color: #341;
+      float: left;
     }
   }
 }
@@ -26,15 +28,30 @@
 
   li {
     background-color: white;
-    padding: 0.5em;
     list-style: none;
+    border-radius: 0.3em;
+
     float: left;
+    position: relative;
+
+    height: 12em;
+    width: 24em;
+    padding: 0.5em;
+    box-sizing: border-box;
+    overflow: hidden;
 
     margin: 0 1em 1em 0;
 
     .name {
       font-size: 1.5em;
+      font-weight: bold;
       margin-bottom: 0.4em;
+    }
+
+    .actions {
+      position: absolute;
+      bottom: 0.5em;
+      right: 0.5em;
     }
   }
 }
