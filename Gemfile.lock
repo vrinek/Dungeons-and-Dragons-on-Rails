@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
+  revision: 2b119e7a83f34202b6ea7f61cd3da59b170ebdd8
+  branch: static
+  specs:
+    twitter-bootstrap-rails (2.0.1)
+      actionpack
+      railties
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -40,7 +49,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
-    commonjs (0.2.5)
     database_cleaner (0.7.2)
     diff-lcs (1.1.3)
     erubis (2.7.0)
@@ -64,13 +72,6 @@ GEM
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
     json (1.6.6)
-    less (2.1.0)
-      commonjs (~> 0.2.0)
-      therubyracer (~> 0.10.0)
-    less-rails (2.2.0)
-      actionpack (>= 3.1)
-      less (~> 2.1.0)
-    libv8 (3.3.10.4)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -136,17 +137,11 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    therubyracer (0.10.0)
-      libv8 (~> 3.3.10)
     thor (0.14.6)
     tilt (1.3.3)
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    twitter-bootstrap-rails (2.0.5)
-      actionpack (>= 3.1)
-      less-rails (~> 2.2.0)
-      railties (>= 3.1)
     tzinfo (0.3.32)
     uglifier (1.2.4)
       execjs (>= 0.3.0)
@@ -168,5 +163,5 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 3.2.3)
   simple_form
-  twitter-bootstrap-rails
+  twitter-bootstrap-rails!
   uglifier (>= 1.0.3)
