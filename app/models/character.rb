@@ -9,13 +9,9 @@ class Character
   validates_presence_of :level
 
   key :alignment, String
-  ALIGNMENTS = [
-    "Lawful Good", "Good", "Neutral", "Evil", "Chaotic Evil", "Unaligned"
-  ]
 
   key :size, String
   validates_presence_of :size
-  SIZES = %w[tiny small medium large huge]
 
   belongs_to :character_race
   validates_presence_of :character_race
@@ -32,18 +28,8 @@ class Character
   key :speed, Integer
 
   key :languages, Array
-  LANGUAGES = [
-    "Common", "Deep Speech", "Draconic", "Dwarven", "Elven", "Goblin", "Giant",
-    "Primordial"
-  ]
 
   key :senses, Array
-  SENSES = ["Low-light vision", "Darkvision"]
-
-  SKILLS = {
-    initiative: :dexterity,
-    perception: :wisdom
-  }
 
   def level_bonus
     level.to_i / 2

@@ -15,7 +15,7 @@
   <%= f.input :character_role, collection: NonPlayerCharacter::ROLES,
     input_html: {class: "chzn-select"} %>
 
-  <%= f.input :size, collection: Character::SIZES,
+  <%= f.input :size, collection: SIZES,
     input_html: {class: "chzn-select"} %>
   <%= f.input :xp_value %>
 
@@ -25,7 +25,7 @@
   <%= f.input :custom_reflex %>
   <%= f.input :custom_will %>
   <%= f.input :speed %>
-  <%= f.input :senses, collection: Character::SENSES,
+  <%= f.input :senses, collection: SENSES,
     input_html: {class: "chzn-select", multiple: true} %>
 
   <%= f.input :strength %>
@@ -35,9 +35,9 @@
   <%= f.input :wisdom %>
   <%= f.input :charisma %>
 
-  <%= f.input :alignment, collection: Character::ALIGNMENTS,
+  <%= f.input :alignment, collection: ALIGNMENTS,
     input_html: {class: "chzn-select"} %>
-  <%= f.input :languages, collection: Character::LANGUAGES,
+  <%= f.input :languages, collection: LANGUAGES,
     input_html: {class: "chzn-select", multiple: true} %>
 
   <div class="form-actions">
