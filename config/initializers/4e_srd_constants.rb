@@ -47,31 +47,6 @@ SENSES = Set.new [
   "Tremorsense", "Truesight"
 ]
 
-SKILLS = Set.new %w[
-  Athletics
-
-  Acrobatics
-  Stealth
-  Thievery
-
-  Dungeoneering
-  Heal
-  Insight
-  Perception
-
-  Endurance
-
-  Arcana
-  History
-  Nature
-  Religion
-
-  Bluff
-  Diplomacy
-  Intimidate
-  Streetwise
-]
-
 SKILLS = {
   initiative: :dexterity,
 
