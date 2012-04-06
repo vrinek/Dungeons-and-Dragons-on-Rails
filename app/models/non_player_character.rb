@@ -1,6 +1,5 @@
 class NonPlayerCharacter < Character
-  key :character_role, String
-  ROLES = %w[Brute Minion Skirmisher Controller Lurker Artillery Soldier].sort
+  key :character_roles, Array
 
   key :xp_value, Integer
 
@@ -30,5 +29,15 @@ class NonPlayerCharacter < Character
 
   def will=(integer)
     self.custom_will = integer
+  end
+
+  def character_role
+    primary = ROLES & character_roles
+    secondary = SUB_ROLES & character_roles
+
+    role = primary.to_a * ' '
+    role << " (#{secondary.to_a * ' '})" if secondary.any?
+
+    role
   end
 end

@@ -12,8 +12,8 @@
   <%= f.input :level %>
   <%= f.input :character_race_id, collection: CharacterRace.for_select,
     input_html: {class: "chzn-select"} %>
-  <%= f.input :character_role, collection: NonPlayerCharacter::ROLES,
-    input_html: {class: "chzn-select"} %>
+  <%= f.input :character_roles, collection: ROLES + SUB_ROLES,
+    input_html: {class: "chzn-select", multiple: true} %>
 
   <%= f.input :size, collection: SIZES,
     input_html: {class: "chzn-select"} %>
