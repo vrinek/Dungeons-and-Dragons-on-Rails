@@ -3,10 +3,6 @@ FactoryGirl.define do
     "name #{n}"
   end
 
-  factory :character_race do
-    name "Human"
-  end
-
   factory :character do
     name
     level 2
@@ -17,7 +13,6 @@ FactoryGirl.define do
     speed 3
     languages ["Common", "Deep Speech"]
     senses ["Low-light vision"]
-    character_race
 
     factory :npc, :class => NonPlayerCharacter do
       character_roles ["Brute"]
@@ -36,5 +31,4 @@ FactoryGirl.define do
       npcs.each {|n| enc.npc_counts[n.id.to_s] = 3}
     }
   end
-
 end

@@ -13,8 +13,7 @@ class Character
   key :size, String
   validates_presence_of :size
 
-  belongs_to :character_race
-  validates_presence_of :character_race
+  key :description, String
 
   key :strength,     AbilityScore, default: 10
   key :constitution, AbilityScore, default: 10

@@ -5,12 +5,12 @@ describe "encounters/index" do
     assign(:encounters, [
       stub_model(Encounter,
         :name => "Name",
-        :npcs => [stub_model(NonPlayerCharacter, :id => '67', :size => 'Uber', :character_race => stub_model(CharacterRace))],
+        :npcs => [stub_model(NonPlayerCharacter, :id => '67', :size => 'Uber')],
         :npc_counts => {'67' => 2}
       ),
       stub_model(Encounter,
         :name => "Name",
-        :npcs => [stub_model(NonPlayerCharacter, :id => '67', :size => 'Uber', :character_race => stub_model(CharacterRace))],
+        :npcs => [stub_model(NonPlayerCharacter, :id => '67', :size => 'Uber')],
         :npc_counts => {'67' => 2}
       )
     ])
