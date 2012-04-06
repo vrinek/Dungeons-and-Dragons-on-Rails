@@ -20,7 +20,7 @@ FactoryGirl.define do
     character_race
 
     factory :npc, :class => NonPlayerCharacter do
-      character_role "Brute"
+      character_roles ["Brute"]
       xp_value 10
     end
 
