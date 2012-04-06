@@ -1,5 +1,5 @@
 require 'spec_helper'
 
 describe "combat/initiative" do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it("works!") { render }
 end
