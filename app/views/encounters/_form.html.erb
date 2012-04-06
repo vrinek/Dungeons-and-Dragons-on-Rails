@@ -6,7 +6,8 @@
 
     <% NonPlayerCharacter.all.each do |npc| %>
       <div class="control-group">
-        <%= label_tag "encounter[npc_counts][#{npc.id}]", npc.name %>
+        <%= label_tag "encounter[npc_counts][#{npc.id}]", npc.name,
+          class: 'control-label' %>
         <div class="controls">
           <%= number_field_tag "encounter[npc_counts][#{npc.id}]",
             @encounter.count_of(npc) %>
