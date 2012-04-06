@@ -55,11 +55,6 @@
 
 * NPCs (no powers)
 * Encounters
-* Races
-
-=== Work In Progress
-
-* Powers
 
 == More resources
 
