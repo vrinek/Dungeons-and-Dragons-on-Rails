@@ -1,9 +1,9 @@
 {<img src="https://secure.travis-ci.org/vrinek/Dungeons-and-Dragons-on-Rails.png?branch=master" alt="Build Status" />}[http://travis-ci.org/vrinek/Dungeons-and-Dragons-on-Rails]
 
-== Wiki
+== Getting started
 
-HOWTOs on setting up this puppy, can be found here:
-https://github.com/vrinek/Dungeons-and-Dragons-on-Rails/wiki
+* {Local installation}[https://github.com/vrinek/Dungeons-and-Dragons-on-Rails/wiki/HOWTO:-Local-installation]
+* {Heroku deployment}[https://github.com/vrinek/Dungeons-and-Dragons-on-Rails/wiki/HOWTO:-Heroku-deployment]
 
 == Notes
 
