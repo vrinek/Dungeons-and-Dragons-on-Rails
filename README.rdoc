@@ -1,30 +1,9 @@
 {<img src="https://secure.travis-ci.org/vrinek/Dungeons-and-Dragons-on-Rails.png?branch=master" alt="Build Status" />}[http://travis-ci.org/vrinek/Dungeons-and-Dragons-on-Rails]
 
-== Getting Started
+== Wiki
 
-0. I assume you already have ruby 1.9 and rubygems
-
-1. Get MongoDB (http://www.mongodb.org/display/DOCS/Quickstart) and run it:
-    mongod
-
-2. Install bundler:
-    gem install bundler
-
-3. (optional for rbenv) rehash rbenv binaries:
-    rbenv rehash
-
-4. Bundle the gems:
-    bundle install
-
-5. Run the specs (optional):
-    bundle exec rspec spec
-
-6. Start the server:
-    bundle exec rails server
-
-7. Point your browser to:
-    http://localhost:3000
-
+HOWTOs on setting up this puppy, can be found here:
+https://github.com/vrinek/Dungeons-and-Dragons-on-Rails/wiki
 
 == Notes
 
