@@ -35,6 +35,12 @@
 * NPCs (no powers)
 * Encounters
 
+=== TODO
+
+* NPC traits, attacks and actions
+* Powers (for players)
+* D&D Insider integration
+
 == More resources
 
 * The Getting Started Guide for Rails:
