@@ -1,4 +1,6 @@
 DnDoR::Application.routes.draw do
+  resources :insider_data
+
   get "combat/initiative", as: 'initiative'
 
   resources :encounters

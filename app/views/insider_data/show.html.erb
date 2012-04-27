@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Original:</b>
+  <%= @insider_datum.original_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @insider_datum.name %>
+</p>
+
+<p>
+  <b>Html:</b>
+  <%= @insider_datum.html %>
+</p>
+
+<p>
+  <b>Data type:</b>
+  <%= @insider_datum.data_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_insider_datum_path(@insider_datum) %> |
+<%= link_to 'Back', insider_data_path %>
