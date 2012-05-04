@@ -20,13 +20,13 @@ class InsiderDatum
   # @param type [String or Symbol]
   # @param id [Integer]
   def self.fetch(type, id)
-    fetch_existing(id) or fetch_from_ravenloft(type, id)
+    fetch_existing(type, id) or fetch_from_ravenloft(type, id)
   end
 
   private
 
-  def self.fetch_existing(id)
-    self.find_by_original_id(id)
+  def self.fetch_existing(type, id)
+    self.where(data_type: type, original_id: id).first
   end
 
   def self.fetch_from_ravenloft(type, id)
