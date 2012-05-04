@@ -4,7 +4,7 @@
 </h1>
 
 <% @characters.each do |character| %>
-  <div class="character">
+  <div class="character card">
     <% if character.is_a?(NonPlayerCharacter) %>
       <%= render "non_player_characters/npc_card", :npc => character %>
 

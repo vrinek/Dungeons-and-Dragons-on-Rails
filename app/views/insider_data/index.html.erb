@@ -1,29 +1,18 @@
-<h1>Listing insider_data</h1>
-
-<table>
-  <tr>
-    <th>Original</th>
-    <th>Name</th>
-    <th>Html</th>
-    <th>Data type</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1>
+  D&amp;D Insider Data
+</h1>
 
 <% @insider_data.each do |insider_datum| %>
-  <tr>
-    <td><%= insider_datum.original_id %></td>
-    <td><%= insider_datum.name %></td>
-    <td><%= insider_datum.html %></td>
-    <td><%= insider_datum.data_type %></td>
-    <td><%= link_to 'Show', insider_datum %></td>
-    <td><%= link_to 'Edit', edit_insider_datum_path(insider_datum) %></td>
-    <td><%= link_to 'Destroy', insider_datum, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <div class="insider-datum card">
+    <div class="details">
+      <%= sanitize insider_datum.html %>
+    </div>
+    <div class="identification">
+      <%= insider_datum.data_type %> #<%= insider_datum.original_id %>
+    </div>
+    <div class="actions">
+      <%= link_to 'Destroy', insider_datum,
+        confirm: 'Are you sure?', method: :delete, class: 'btn-danger btn' %>
+    </div>
+  </div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Insider datum', new_insider_datum_path %>
