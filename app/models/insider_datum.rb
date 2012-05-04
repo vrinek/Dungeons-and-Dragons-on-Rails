@@ -29,7 +29,7 @@ class InsiderDatum
 
   def self.fetch_from_ravenloft(type, id)
     @raven = Ravenloft::Manager.new
-    credentials = DND_INSIDER_CREDENTIALS
+    credentials = DnDoR::DND_INSIDER_CREDENTIALS
     @raven.login!(credentials["email"], credentials["password"])
 
     # Ravenloft version 0.0.2 returns a String containing the detail HTML

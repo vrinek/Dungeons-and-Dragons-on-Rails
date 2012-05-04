@@ -67,4 +67,11 @@ module DnDoR
       g.orm :mongo_mapper
     end
   end
+
+  DND_INSIDER_CREDENTIALS = begin
+    Psych.load_file(File.join(Rails.root, "config", "dnd_insider.yml"))
+  rescue
+    puts "You should edit config/dnd_insider.sample.yml to set your credentials."
+    {"email" => "", "password" => ""}
+  end
 end
