@@ -9,9 +9,10 @@ GIT
 
 GIT
   remote: git://github.com/tdgs/ravenloft.git
-  revision: a1cd9473c157fd4772032aa36e93f095e415946d
+  revision: c72e1e0aa95363da1c536d635b071653dc00448c
+  tag: v0.0.2
   specs:
-    ravenloft (0.0.1)
+    ravenloft (0.0.2)
       nokogiri
 
 GEM

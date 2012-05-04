@@ -33,9 +33,9 @@ class InsiderDatum
     @raven = Ravenloft::Manager.new
     @raven.login!(CREDENTIALS["email"], CREDENTIALS["password"])
 
-    # Ravenloft version 0.0.1 returns Nokogiri::HTML::Document
-    page = @raven.get(type, id)
-    self.create html: page.to_html,
+    # Ravenloft version 0.0.2 returns a String containing the detail HTML
+    detail = @raven.get(type, id)
+    self.create html: detail,
                 data_type: type,
                 original_id: id,
                 ravenloft_version: Ravenloft::VERSION

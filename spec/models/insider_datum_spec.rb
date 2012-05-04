@@ -22,16 +22,14 @@ describe InsiderDatum do
 
     it "should hit Ravenloft" do
       Ravenloft::Manager.any_instance.should_receive(:login!)
-      page = mock(:nokogiri_page, to_html: "some html")
-      Ravenloft::Manager.any_instance.should_receive(:get).and_return(page)
+      Ravenloft::Manager.any_instance.should_receive(:get).and_return("some html")
 
       InsiderDatum.fetch(type, id)
     end
 
     it "should cache the result to the database" do
       Ravenloft::Manager.any_instance.stub(:login!)
-      page = mock(:nokogiri_page, to_html: "some html")
-      Ravenloft::Manager.any_instance.stub(:get).and_return(page)
+      Ravenloft::Manager.any_instance.stub(:get).and_return("some html")
 
       expect {
         InsiderDatum.fetch(type, id)

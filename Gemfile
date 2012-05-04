@@ -27,7 +27,7 @@ end
 gem 'jquery-rails'
 gem 'simple_form'
 
-gem 'ravenloft', git: 'git://github.com/tdgs/ravenloft.git'
+gem 'ravenloft', git: 'git://github.com/tdgs/ravenloft.git', tag: 'v0.0.2'
 
 group :test do
   gem "rspec-rails"
