@@ -1,8 +1,6 @@
 class InsiderDatum
   include MongoMapper::Document
 
-  CREDENTIALS = Psych.load_file(File.join(Rails.root, "config", "dnd_insider.yml"))
-
   # Mandatory keys for fetching
   key :original_id, Integer
   key :data_type, String
@@ -31,7 +29,8 @@ class InsiderDatum
 
   def self.fetch_from_ravenloft(type, id)
     @raven = Ravenloft::Manager.new
-    @raven.login!(CREDENTIALS["email"], CREDENTIALS["password"])
+    credentials = DND_INSIDER_CREDENTIALS
+    @raven.login!(credentials["email"], credentials["password"])
 
     # Ravenloft version 0.0.2 returns a String containing the detail HTML
     detail = @raven.get(type, id)
