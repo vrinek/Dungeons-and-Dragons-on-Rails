@@ -4,16 +4,22 @@
 
 body #page .insider-datum {
   position: relative;
+  width: 560px;
 
   .details {
+    // CSS override
     h1 {
-      // layout.css override
       border-radius: 0;
+    }
+
+    h2 {
+      line-height: 1em;
     }
 
     background: #fff;
     color: #000000;
     font-size: 8.75pt;
+    width: 560px;
 
     p {
       padding-left: 15px;
