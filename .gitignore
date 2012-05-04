@@ -15,3 +15,6 @@
 /tmp
 
 *.swp
+
+# Ignore sensitive config files
+config/dnd_insider.yml
