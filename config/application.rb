@@ -74,4 +74,8 @@ module DnDoR
     puts "You should edit config/dnd_insider.sample.yml to set your credentials."
     {"email" => "", "password" => ""}
   end
+
+  DND_INSIDER_TAGS = %w[
+    a b blockquote br h1 h2 h3 i img p span table td tr
+  ]
 end

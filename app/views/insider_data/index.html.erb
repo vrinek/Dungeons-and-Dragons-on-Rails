@@ -5,7 +5,7 @@
 <% @insider_data.each do |insider_datum| %>
   <div class="insider-datum card">
     <div class="details">
-      <%= sanitize insider_datum.html %>
+      <%= sanitize insider_datum.html, tags: DnDoR::DND_INSIDER_TAGS %>
     </div>
     <div class="identification">
       <%= insider_datum.data_type %> #<%= insider_datum.original_id %>
