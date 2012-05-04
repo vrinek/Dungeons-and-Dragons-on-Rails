@@ -20,18 +20,24 @@ class InsiderDatum
   # @param type [String or Symbol]
   # @param id [Integer]
   def self.fetch(type, id)
-    if self.exists?(data_type: type, original_id: id)
-      self.find_by_original_id(id)
-    else
-      @raven = Ravenloft::Manager.new
-      @raven.login!(CREDENTIALS["email"], CREDENTIALS["password"])
+    fetch_existing(id) or fetch_from_ravenloft(type, id)
+  end
 
-      # Ravenloft version 0.0.1 returns Nokogiri::HTML::Document
-      page = @raven.get(type, id)
-      self.create html: page.to_html,
-                  data_type: type,
-                  original_id: id,
-                  ravenloft_version: Ravenloft::VERSION
-    end
+  private
+
+  def self.fetch_existing(id)
+    self.find_by_original_id(id)
+  end
+
+  def self.fetch_from_ravenloft(type, id)
+    @raven = Ravenloft::Manager.new
+    @raven.login!(CREDENTIALS["email"], CREDENTIALS["password"])
+
+    # Ravenloft version 0.0.1 returns Nokogiri::HTML::Document
+    page = @raven.get(type, id)
+    self.create html: page.to_html,
+                data_type: type,
+                original_id: id,
+                ravenloft_version: Ravenloft::VERSION
   end
 end
