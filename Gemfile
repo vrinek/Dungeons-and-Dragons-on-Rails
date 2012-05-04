@@ -27,6 +27,8 @@ end
 gem 'jquery-rails'
 gem 'simple_form'
 
+gem 'ravenloft', git: 'git://github.com/tdgs/ravenloft.git'
+
 group :test do
   gem "rspec-rails"
   gem "database_cleaner"

@@ -7,6 +7,13 @@ GIT
       actionpack
       railties
 
+GIT
+  remote: git://github.com/tdgs/ravenloft.git
+  revision: a1cd9473c157fd4772032aa36e93f095e415946d
+  specs:
+    ravenloft (0.0.1)
+      nokogiri
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -84,6 +91,7 @@ GEM
       activesupport (~> 3.0)
       plucky (~> 0.4.0)
     multi_json (1.2.0)
+    nokogiri (1.5.2)
     plucky (0.4.4)
       mongo (~> 1.5)
     polyglot (0.3.3)
@@ -160,6 +168,7 @@ DEPENDENCIES
   jquery-rails
   mongo_mapper
   rails (= 3.2.1)
+  ravenloft!
   rspec-rails
   sass-rails (~> 3.2.3)
   simple_form
