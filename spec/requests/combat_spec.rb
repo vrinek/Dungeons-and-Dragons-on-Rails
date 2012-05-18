@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe "Characters" do
-  describe "GET /characters" do
+describe "Combat" do
+  describe "GET /combat/initiative" do
     it "works!" do
-      get characters_path
+      get initiative_path
       response.status.should be(200)
     end
   end
