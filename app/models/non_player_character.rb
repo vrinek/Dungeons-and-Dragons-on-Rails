@@ -3,9 +3,11 @@ class NonPlayerCharacter < Character
 
   key :xp_value, Integer
 
-  key :custom_fortitude, Integer
-  key :custom_reflex,    Integer
-  key :custom_will,      Integer
+  key :custom_fortitude,   Integer
+  key :custom_reflex,      Integer
+  key :custom_will,        Integer
+
+  key :custom_initiative,  Integer
 
   def fortitude
     custom_fortitude ? custom_fortitude : super
@@ -29,6 +31,12 @@ class NonPlayerCharacter < Character
 
   def will=(integer)
     self.custom_will = integer
+  end
+
+  def check(ability_or_skill)
+    return custom_initiative if ability_or_skill == :initiative && custom_initiative
+
+    super(ability_or_skill)
   end
 
   def character_role

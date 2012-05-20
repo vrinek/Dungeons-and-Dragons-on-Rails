@@ -59,4 +59,18 @@ describe NonPlayerCharacter do
       npc.will.should == 5
     end
   end
+
+  describe "check(:initiative)" do
+    it "is calculated from dexterity plus level bonus (as always)" do
+      NonPlayerCharacter.new(dexterity: 12, level: 5).check(:initiative).
+        should == 3
+    end
+
+    it "can be overwritten" do
+      npc = NonPlayerCharacter.new(dexterity: 12, level: 5)
+      npc.custom_initiative = 7
+
+      npc.check(:initiative).should == 7
+    end
+  end
 end
