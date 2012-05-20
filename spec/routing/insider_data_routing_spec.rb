@@ -31,5 +31,9 @@ describe InsiderDataController do
       delete("/insider_data/1").should route_to("insider_data#destroy", :id => "1")
     end
 
+    it "routes to #fetch" do
+      get("/insider_data/fetch").should route_to("insider_data#fetch")
+    end
+
   end
 end

@@ -1,5 +1,10 @@
 <h1>
   D&amp;D Insider Data
+  <%= form_tag fetch_insider_data_path, method: 'get', class: 'form-inline' do %>
+    <%= select_tag :type, options_for_select([nil]+%w[Power Monster Class]) %>
+    <%= number_field_tag :id, nil, placeholder: 'ID' %>
+    <%= submit_tag 'Fetch', class: 'btn' %>
+  <% end %>
 </h1>
 
 <% @insider_data.each do |insider_datum| %>

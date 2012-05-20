@@ -80,4 +80,16 @@ class InsiderDataController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # GET /insider_data/fetch
+  def fetch
+    if params[:id].blank?
+      flash[:alert] = "No id was provided, cannot fetch."
+    else
+      datum = InsiderDatum.fetch(params[:type], params[:id])
+      flash[:info] = "Fetched \"#{datum.name}\""
+    end
+
+    redirect_to insider_data_url
+  end
 end

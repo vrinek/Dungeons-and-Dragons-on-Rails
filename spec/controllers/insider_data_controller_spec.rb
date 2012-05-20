@@ -26,7 +26,7 @@ describe InsiderDataController do
   def valid_attributes
     {}
   end
-  
+
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # InsiderDataController. Be sure to keep this updated too.
@@ -158,6 +158,40 @@ describe InsiderDataController do
       insider_datum = InsiderDatum.create! valid_attributes
       delete :destroy, {:id => insider_datum.to_param}, valid_session
       response.should redirect_to(insider_data_url)
+    end
+  end
+
+  describe "GET fetch" do
+    let(:insider_datum) { FactoryGirl.create :insider_datum }
+
+    before(:each) do
+      InsiderDatum.stub(:fetch).and_return(insider_datum)
+    end
+
+    it "fetches the data" do
+      InsiderDatum.should_receive(:fetch).with('power', '534').
+        and_return(insider_datum)
+
+      get :fetch, {type: 'power', id: '534'}, valid_session
+    end
+
+    it "assigns a flash info" do
+      get :fetch, {type: 'power', id: '534'}, valid_session
+
+      flash[:info].should be
+    end
+
+    it "redirects to the insider_data list" do
+      get :fetch, {type: 'power', id: '534'}, valid_session
+      response.should redirect_to(insider_data_url)
+    end
+
+    context "when no id is given" do
+      it "assigns a flash alert" do
+        get :fetch, {type: 'power', id: ''}, valid_session
+
+        flash[:alert].should be
+      end
     end
   end
 
