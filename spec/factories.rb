@@ -26,9 +26,12 @@ FactoryGirl.define do
 
   factory :encounter do
     name "An Encouter"
-    after_build {|enc|
-      npcs = FactoryGirl.create_list(:npc, 3)
-      npcs.each {|n| enc.npc_counts[n.id.to_s] = 3}
-    }
+
+    trait :with_npcs do
+      after_build {|enc|
+        npcs = FactoryGirl.create_list(:npc, 3)
+        npcs.each {|n| enc.npc_counts[n.id.to_s] = 3}
+      }
+    end
   end
 end

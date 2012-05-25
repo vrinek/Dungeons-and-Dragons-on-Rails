@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "Encounters" do
   let(:encounter) do
-    FactoryGirl.create :encounter
+    FactoryGirl.create :encounter, :with_npcs
   end
 
   describe "GET /encounters" do

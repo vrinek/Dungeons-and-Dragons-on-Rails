@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Encounter do
-  subject { FactoryGirl.create(:encounter) }
+  subject { FactoryGirl.create(:encounter, :with_npcs) }
 
   it { should respond_to(:explain_npcs) }
   it { should respond_to(:count_of) }
