@@ -23,4 +23,10 @@ class Encounter
       hash.merge npc.name => npc.roll_initiative
     end
   end
+
+  def total_xp
+    npcs.reduce(0) do |total, npc|
+      npc.xp_value.to_i * npc_counts[npc.id.to_s].to_i + total
+    end
+  end
 end
