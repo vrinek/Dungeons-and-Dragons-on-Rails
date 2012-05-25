@@ -5,7 +5,7 @@ class Encounter
   key :npc_counts, Hash
 
   def npcs
-    NonPlayerCharacter.where(:id => npc_counts.select{|_,v| v.to_i!=0}.map{|k,_| k})
+    NonPlayerCharacter.where(id: npc_counts.select{|_,v| v.to_i != 0}.keys)
   end
 
   def explain_npcs
