@@ -36,4 +36,32 @@ describe Encounter do
       its(:total_xp) { should == 260 }
     end
   end
+
+  describe "npcs" do
+    subject { FactoryGirl.create(:encounter) }
+
+    let!(:troll) { FactoryGirl.create(:npc) }
+    let!(:goblin) { FactoryGirl.create(:npc) }
+
+    context "on an empty encounter" do
+      its(:npcs) { should be_empty }
+    end
+
+    context "on an encounter with 3 trolls" do
+      before(:each) do
+        subject.npc_counts[troll.id.to_s] = 3
+      end
+
+      it { subject.npcs.to_a.should == [troll] }
+    end
+
+    context "on an encounter with 2 trolls and 7 goblins" do
+      before(:each) do
+        subject.npc_counts[troll.id.to_s] = 2
+        subject.npc_counts[goblin.id.to_s] = 7
+      end
+
+      it { subject.npcs.to_a.should =~ [troll, goblin] }
+    end
+  end
 end
