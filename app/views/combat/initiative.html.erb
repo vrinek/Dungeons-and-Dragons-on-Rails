@@ -1,5 +1,12 @@
 <h1>Combat initiative</h1>
 
+<% if @encounter %>
+  <h2>
+    <%= @encounter.name %>
+    <span class="xp"><%= @encounter.total_xp %> XP</span>
+  </h2>
+<% end -%>
+
 <table class="table table-bordered" id="initiative-table">
   <thead><tr>
     <th>Character</th>
