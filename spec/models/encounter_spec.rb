@@ -7,8 +7,6 @@ describe Encounter do
   it { should respond_to(:count_of) }
   it { should respond_to(:roll_initiative) }
 
-  its(:roll_initiative) { should be_a(Hash) }
-
   describe "total_xp" do
     subject { FactoryGirl.create(:encounter) }
 
@@ -62,6 +60,22 @@ describe Encounter do
       end
 
       it { subject.npcs.to_a.should =~ [troll, goblin] }
+    end
+  end
+
+  describe "initiative rolling" do
+    before(:each) do
+      subject.npcs.should_not be_empty
+    end
+
+    its(:roll_initiative) { should be_a(Hash) }
+
+    it "should roll for all the npcs" do
+      subject.roll_initiative.keys.should =~ subject.npcs.map(&:name)
+    end
+
+    specify "all rolls should be integers" do
+      subject.roll_initiative.values.map(&:class).uniq.should == [Fixnum]
     end
   end
 end
