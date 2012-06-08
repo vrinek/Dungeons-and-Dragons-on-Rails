@@ -3,10 +3,47 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 @Initiative =
+  # Initializes all necessary parts of the initiative page.
+  init: ->
+    @initInputLineField()
+    @initStartCombatButton()
+    @initAdvanceTurnButton()
+
+  # Initializes input field to add initiative rolls to the initiative table.
+  initInputLineField: ->
+    $('#input-line').keypress (event) =>
+      if event.which == 13 # [Enter] key
+        event.preventDefault()
+        @addNewLine()
+
+  # Initializes the "Start" button to begin combat and turn keeping.
+  initStartCombatButton: ->
+    $('#start-combat').on 'click', (event) =>
+      $('tr', @tbody).first().addClass('current-turn')
+      $(event.target).hide()
+      $('#advance-turn').show()
+      false
+
+  # Initializes the "Next!" button to advance the turn on the initiative table.
+  initAdvanceTurnButton: ->
+    $('#advance-turn').hide().on 'click', (event) =>
+      currentTr = $('tr.current-turn', @tbody)
+      nextTr = currentTr.next('tr')
+      currentTr.removeClass 'current-turn'
+
+      if nextTr.length != 0
+        nextTr.addClass 'current-turn'
+      else
+        $('tr', @tbody).first().addClass 'current-turn'
+
+      false
+
+  # Used to add ready-made initiatives.
   addInitiatives: (initiatives) ->
     for line in initiatives
       @addNewLine line
 
+  # Adds a new line into the initiative table.
   addNewLine: (inputLine) ->
     inputLine ||= this.inputLine.val()
 
@@ -21,30 +58,7 @@
 
       @inputLine.val ''
 
-  init: ->
-    $('#input-line').keypress (event) =>
-      if event.which == 13 # [Enter] key
-        event.preventDefault()
-        @addNewLine()
-
-    $('#start-combat').on 'click', (event) =>
-      $('tr', @tbody).first().addClass('current-turn')
-      $(event.target).hide()
-      $('#advance-turn').show()
-      false
-
-    $('#advance-turn').hide().on 'click', (event) =>
-      currentTr = $('tr.current-turn', @tbody)
-      nextTr = currentTr.next('tr')
-      currentTr.removeClass 'current-turn'
-
-      if nextTr.length != 0
-        nextTr.addClass 'current-turn'
-      else
-        $('tr', @tbody).first().addClass 'current-turn'
-
-      false
-
+  # Prepares an HTML TR element given a name and initiative.
   trFor: (name, initiative) ->
     '<tr data-initiative="' + initiative + '">' +
       '<td>' + name + '</td>' +
@@ -52,6 +66,7 @@
       '<td><a href="#" class="remove">remove</a></td>' +
     '</tr>'
 
+  # Sorts the initiative table.
   sortTable: ->
     trs = $('tr', @tbody)
 
