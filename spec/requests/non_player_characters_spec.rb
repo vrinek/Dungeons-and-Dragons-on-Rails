@@ -12,6 +12,13 @@ describe "NonPlayerCharacters" do
     end
   end
 
+  describe "GET /non_player_characters/:id/edit" do
+    it "works!" do
+      get edit_non_player_character_path(npc)
+      response.status.should be(200)
+    end
+  end
+
   describe "GET /non_player_characters/new" do
     it "works!" do
       get new_non_player_character_path

@@ -5,14 +5,19 @@
 
 <% @characters.each do |character| %>
   <div class="character">
-    <%= render "non_player_characters/npc_card", :npc => character %>
+    <% if character.is_a?(NonPlayerCharacter) %>
+      <%= render "non_player_characters/npc_card", :npc => character %>
 
-    <div class="actions">
-      <%= link_to 'Show', character, class: "btn" %>
-      <%= link_to 'Edit', edit_non_player_character_path(character),
-        class: "btn" %>
-      <%= link_to 'Destroy', character_path(character),
-        confirm: 'Are you sure?', method: :delete, class: "btn-danger btn" %>
-    </div>
+      <div class="actions">
+        <%= link_to 'Show', character, class: "btn" %>
+        <%= link_to 'Edit', edit_non_player_character_path(character),
+          class: "btn" %>
+        <%= link_to 'Destroy', character_path(character),
+          confirm: 'Are you sure?', method: :delete, class: "btn-danger btn" %>
+      </div>
+    <% else -%>
+      <%# Not implemented yet %>
+      <%= debug character %>
+    <% end -%>
   </div>
 <% end %>
