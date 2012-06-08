@@ -40,8 +40,8 @@
 
   # Used to add ready-made initiatives.
   addInitiatives: (initiatives) ->
-    for line in initiatives
-      @addNewLine line
+    for name, initiative of initiatives
+      @addNewLine "#{name} #{initiative}"
 
   # Adds a new line into the initiative table.
   addNewLine: (inputLine) ->

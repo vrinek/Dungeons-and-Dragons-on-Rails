@@ -35,10 +35,10 @@
   </p>
 </form>
 
-<% if @initiatives %>
+<% if @encounter %>
   <script type="text/javascript">
     $(function(){
-      Initiative.addInitiatives(<%=raw @initiatives.to_json %>)
+      Initiative.addInitiatives(<%=raw @encounter.roll_initiative.to_json %>)
     })
   </script>
 <% end -%>
