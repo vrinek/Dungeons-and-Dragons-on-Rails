@@ -5,6 +5,22 @@
     <%= @encounter.name %>
     <span class="xp"><%= @encounter.total_xp %> XP</span>
   </h2>
+
+  <table class="table table-bordered" id="xp-table">
+    <thead><tr>
+      <th>Players</th>
+      <th>XP each</th>
+    </tr></thead>
+
+    <tbody>
+      <% (3..5).each do |player_count| %>
+        <tr>
+          <td> <%= player_count %> </td>
+          <td> <%= @encounter.split_xp(player_count) %> </td>
+        </tr>
+      <% end -%>
+    </tbody>
+  </table>
 <% end -%>
 
 <table class="table table-bordered" id="initiative-table">
@@ -22,6 +38,10 @@
     <input type="text" class="span6" id="input-line" />
     <a href="#" class="btn" id="start-combat"> Start </a>
     <a href="#" class="btn" id="advance-turn"> Next! </a>
+
+    <% if @encounter %>
+      <a href="#" class="btn" id="award-xp"> Award XP </a>
+    <% end -%>
   </p>
 
   <p class="help-block" id="input-help">

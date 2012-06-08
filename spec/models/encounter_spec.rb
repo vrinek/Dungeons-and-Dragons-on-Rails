@@ -35,6 +35,30 @@ describe Encounter do
     end
   end
 
+  describe "splitting xp" do
+    context "when worth 183 XP" do
+      before(:each) do
+        subject.stub(:total_xp => 183)
+      end
+
+      context "and split between 3 players" do
+        let(:player_count) { 3 }
+
+        it "should result to 60 XP per player" do
+          subject.split_xp(player_count).should == 60
+        end
+      end
+
+      context "and split between 7 players" do
+        let(:player_count) { 7 }
+
+        it "should result to 25 XP per player" do
+          subject.split_xp(player_count).should == 25
+        end
+      end
+    end
+  end
+
   describe "npcs" do
     subject { FactoryGirl.create(:encounter) }
 

@@ -29,4 +29,10 @@ class Encounter
       npc.xp_value.to_i * npc_counts[npc.id.to_s].to_i + total
     end
   end
+
+  def split_xp(split)
+    # splits the total xp and rounds the result by 5 (17 -> 15, 21 -> 20)
+    splitted = (total_xp / split)
+    return splitted - splitted % 5
+  end
 end

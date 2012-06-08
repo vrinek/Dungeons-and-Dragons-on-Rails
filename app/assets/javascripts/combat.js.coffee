@@ -8,6 +8,7 @@
     @initInputLineField()
     @initStartCombatButton()
     @initAdvanceTurnButton()
+    @initAwardXPButton() if @hasEncounterXP()
 
   # Initializes input field to add initiative rolls to the initiative table.
   initInputLineField: ->
@@ -22,6 +23,8 @@
       $('tr', @tbody).first().addClass('current-turn')
       $(event.target).hide()
       $('#advance-turn').show()
+      $('#award-xp').show() if @hasEncounterXP()
+
       false
 
   # Initializes the "Next!" button to advance the turn on the initiative table.
@@ -37,6 +40,19 @@
         $('tr', @tbody).first().addClass 'current-turn'
 
       false
+
+  # Initializes the "Award XP" button and the XP table.
+  initAwardXPButton: ->
+    $('#xp-table').hide()
+    $('#award-xp').hide().on 'click', (event) =>
+      $('#initiative-table').hide()
+      $('#initiative-form').hide()
+      $('#xp-table').show()
+
+      false
+
+  hasEncounterXP: () ->
+    !!$('h2 .xp').text()
 
   # Used to add ready-made initiatives.
   addInitiatives: (initiatives) ->
