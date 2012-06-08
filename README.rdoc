@@ -26,9 +26,12 @@
 
 == Status
 
+https://trello.com/board/d-d-on-rails/4fa3837d012cc95903650826
+
 === Fully Working
 
 * Combat initiative table
+* Award XP after combat
 
 === Partially Working
 
