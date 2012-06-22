@@ -15,6 +15,8 @@ class InsiderDatum
   timestamps!
   key :ravenloft_version, String
 
+  before_create :localize_image_sources
+
   # @param type [String or Symbol]
   # @param id [Integer]
   def self.fetch(type, id)
@@ -38,5 +40,15 @@ class InsiderDatum
                 data_type: type,
                 original_id: id,
                 ravenloft_version: Ravenloft::VERSION
+  end
+
+  def localize_image_sources
+    return if html.blank?
+
+    html.gsub!(/<img src="([^"]+)"[^>]*>/) do |match|
+      file = $1.split("/").last
+      file = "x.gif" if file == "bullet.gif"
+      "<img src=\"/images/insider_data/#{file}\" />"
+    end
   end
 end
